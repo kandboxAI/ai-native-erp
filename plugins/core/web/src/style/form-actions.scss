@@ -1,0 +1,31 @@
+/* 表单底部操作：辅助操作靠左，保存、提交、审核等主操作始终靠右。 */
+.erp-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.erp-form-actions__primary,
+.erp-form-actions__secondary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  max-width: 100%;
+
+  > .el-button + .el-button {
+    margin-left: 0;
+  }
+}
+
+.erp-form-actions__primary {
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.erp-form-actions__secondary {
+  margin-right: auto;
+}

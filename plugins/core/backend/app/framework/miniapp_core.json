@@ -1,0 +1,20 @@
+{
+  "format_version": 1,
+  "pages": [
+    "pages/login/index",
+    "pages/qr-login/index",
+    "pages/home/index",
+    "pages/workspace/index",
+    "pages/xiaohang/index",
+    "pages/messages/index",
+    "pages/profile/index",
+    "pages/todo/index",
+    "pages/todo-detail/index",
+    "pages/todo-handle/index",
+    "pages/request-detail/index",
+    "pages/approvals/index",
+    "pages/announcements/index",
+    "pages/notifications/index",
+    "pages/notice-detail/index"
+  ]
+}

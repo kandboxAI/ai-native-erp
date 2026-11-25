@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "resources": {
+    "sys_department": {
+      "label": "部门",
+      "domain": "system",
+      "aliases": [
+        "教务处",
+        "组织部门"
+      ],
+      "field_aliases": {},
+      "relations": []
+    },
+    "sys_dict": {
+      "label": "数据字典",
+      "domain": "system",
+      "aliases": [
+        "枚举",
+        "字典分类"
+      ],
+      "field_aliases": {},
+      "relations": []
+    },
+    "sys_dict_item": {
+      "label": "字典项",
+      "domain": "system",
+      "aliases": [
+        "字典选项",
+        "枚举值"
+      ],
+      "relations": [
+        {
+          "field": "dict_id",
+          "target": "sys_dict",
+          "cardinality": "many_to_one"
+        }
+      ],
+      "field_aliases": {}
+    },
+    "sys_miniapp_menu": {
+      "label": "小程序菜单",
+      "domain": "system",
+      "aliases": [
+        "移动端导航",
+        "小程序入口"
+      ],
+      "field_aliases": {},
+      "relations": []
+    }
+  },
+  "metrics": {}
+}

@@ -1,0 +1,35 @@
+{
+  "name": "erp-foundation-miniprogram",
+  "version": "1.0.0",
+  "private": true,
+  "description": "管理底座移动端",
+  "scripts": {
+    "dev:h5": "node scripts/run-deployment.mjs --force",
+    "build:h5": "node scripts/run-deployment.mjs build",
+    "build:mp-weixin": "node scripts/run-deployment.mjs build -p mp-weixin && node scripts/verify-weixin-release.mjs",
+    "typecheck": "vue-tsc --noEmit",
+    "dev:mp-weixin": "node scripts/run-deployment.mjs -p mp-weixin"
+  },
+  "dependencies": {
+    "@dcloudio/uni-app": "3.0.0-5020420260813003",
+    "@dcloudio/uni-components": "3.0.0-5020420260813003",
+    "@dcloudio/uni-h5": "3.0.0-5020420260813003",
+    "@dcloudio/uni-mp-weixin": "3.0.0-5020420260813003",
+    "@vue/shared": "3.4.21",
+    "dijkstrajs": "1.0.3",
+    "markdown-it": "^15.0.2",
+    "qrcode": "1.5.4",
+    "vue": "3.4.21"
+  },
+  "devDependencies": {
+    "@dcloudio/types": "^3.4.32",
+    "@dcloudio/uni-cli-shared": "3.0.0-5020420260813003",
+    "@dcloudio/vite-plugin-uni": "3.0.0-5020420260813003",
+    "@vue/tsconfig": "^0.8.1",
+    "sass": "^1.104.1",
+    "typescript": "^5.9.2",
+    "vite": "5.2.8",
+    "vue-tsc": "^3.0.6"
+  },
+  "license": "MIT"
+}

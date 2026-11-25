@@ -1,0 +1,29 @@
+{
+  "format_version": 1,
+  "web_view_roots": [
+    "inventory",
+    "asset-management",
+    "location"
+  ],
+  "miniapp_pages": [
+    "pages/material/index",
+    "pages/material-form/index",
+    "pages/material-detail/index",
+    "pages/material-stock/index",
+    "pages/material-config/index",
+    "pages/inventory-alerts/index",
+    "pages/inventory-alert-detail/index",
+    "pages/asset-handovers/index"
+  ],
+  "miniapp_service_provider": "miniprogram/services.ts",
+  "web_applications": [
+    {
+      "title": "物资与库存",
+      "summary": "物料、库存及出入库单据",
+      "icon": "ri:archive-line",
+      "path": "/inventory/stock",
+      "rootPath": "/inventory",
+      "tone": "blue"
+    }
+  ]
+}

@@ -1,0 +1,935 @@
+[
+  {
+    "dict_code": "auth_tenant_plugin_provisioning_status",
+    "dict_name": "租户能力包开通状态",
+    "scope": "global",
+    "items": [
+      [
+        "pending",
+        "待开通"
+      ],
+      [
+        "installing",
+        "开通中"
+      ],
+      [
+        "ready",
+        "已就绪"
+      ],
+      [
+        "failed",
+        "开通失败"
+      ]
+    ]
+  },
+  {
+    "dict_code": "sys_org_type",
+    "dict_name": "组织类型",
+    "scope": "global",
+    "items": [
+      [
+        "group",
+        "集团"
+      ],
+      [
+        "organization",
+        "组织"
+      ]
+    ]
+  },
+  {
+    "dict_code": "sys_data_scope",
+    "dict_name": "数据范围",
+    "scope": "global",
+    "items": [
+      [
+        "all",
+        "全部"
+      ],
+      [
+        "organization",
+        "本组织"
+      ],
+      [
+        "department",
+        "本部门"
+      ],
+      [
+        "self",
+        "本人"
+      ],
+      [
+        "related",
+        "关联对象"
+      ]
+    ]
+  },
+  {
+    "dict_code": "sys_org_access_mode",
+    "dict_name": "组织访问方式",
+    "scope": "global",
+    "items": [
+      [
+        "primary_only",
+        "仅主组织"
+      ],
+      [
+        "assigned",
+        "授权的组织"
+      ],
+      [
+        "all",
+        "全部组织"
+      ]
+    ]
+  },
+  {
+    "dict_code": "sys_user_org_access_type",
+    "dict_name": "组织授权类型",
+    "scope": "global",
+    "items": [
+      [
+        "primary",
+        "主组织"
+      ],
+      [
+        "assigned",
+        "额外授权"
+      ]
+    ]
+  },
+  {
+    "dict_code": "sys_menu_type",
+    "dict_name": "菜单类型",
+    "scope": "global",
+    "items": [
+      [
+        "directory",
+        "目录"
+      ],
+      [
+        "menu",
+        "菜单"
+      ],
+      [
+        "button",
+        "按钮"
+      ]
+    ]
+  },
+  {
+    "dict_code": "sys_open_target",
+    "dict_name": "打开方式",
+    "scope": "global",
+    "items": [
+      [
+        "self",
+        "当前页"
+      ],
+      [
+        "blank",
+        "新窗口"
+      ],
+      [
+        "iframe",
+        "内嵌"
+      ]
+    ]
+  },
+  {
+    "dict_code": "sys_miniapp_portal",
+    "dict_name": "小程序门户",
+    "scope": "global",
+    "items": [
+      [
+        "standard",
+        "用户"
+      ]
+    ]
+  },
+  {
+    "dict_code": "sys_module",
+    "dict_name": "系统模块",
+    "scope": "global",
+    "items": [
+      [
+        "system",
+        "系统管理"
+      ],
+      [
+        "workflow",
+        "审批"
+      ],
+      [
+        "notify",
+        "通知"
+      ]
+    ]
+  },
+  {
+    "dict_code": "sys_setting_group",
+    "dict_name": "参数分组",
+    "scope": "global",
+    "items": [
+      [
+        "security",
+        "安全"
+      ],
+      [
+        "notify",
+        "通知"
+      ],
+      [
+        "ai",
+        "智能体"
+      ]
+    ]
+  },
+  {
+    "dict_code": "sys_value_type",
+    "dict_name": "参数值类型",
+    "scope": "global",
+    "items": [
+      [
+        "string",
+        "文本"
+      ],
+      [
+        "number",
+        "数值"
+      ],
+      [
+        "boolean",
+        "是否"
+      ],
+      [
+        "json",
+        "结构化"
+      ]
+    ]
+  },
+  {
+    "dict_code": "md_party_type",
+    "dict_name": "主体类型",
+    "scope": "global",
+    "items": [
+      [
+        "person",
+        "自然人"
+      ],
+      [
+        "organization",
+        "机构"
+      ]
+    ]
+  },
+  {
+    "dict_code": "md_gender",
+    "dict_name": "性别",
+    "scope": "global",
+    "items": [
+      [
+        "male",
+        "男"
+      ],
+      [
+        "female",
+        "女"
+      ],
+      [
+        "unknown",
+        "未说明"
+      ]
+    ]
+  },
+  {
+    "dict_code": "md_identity_type",
+    "dict_name": "证件类型",
+    "scope": "global",
+    "items": [
+      [
+        "id_card",
+        "居民身份证"
+      ],
+      [
+        "passport",
+        "护照"
+      ],
+      [
+        "hk_macao_pass",
+        "港澳居民来往内地通行证"
+      ],
+      [
+        "taiwan_pass",
+        "台湾居民来往大陆通行证"
+      ],
+      [
+        "residence_permit",
+        "外国人永久居留身份证"
+      ]
+    ]
+  },
+  {
+    "dict_code": "md_contact_type",
+    "dict_name": "联系方式类型",
+    "scope": "global",
+    "items": [
+      [
+        "mobile",
+        "手机"
+      ],
+      [
+        "phone",
+        "固定电话"
+      ],
+      [
+        "email",
+        "邮箱"
+      ],
+      [
+        "wechat",
+        "微信"
+      ],
+      [
+        "home_address",
+        "家庭住址"
+      ],
+      [
+        "household_address",
+        "户籍地址"
+      ]
+    ]
+  },
+  {
+    "dict_code": "md_contact_purpose",
+    "dict_name": "联系方式用途",
+    "scope": "global",
+    "items": [
+      [
+        "notify",
+        "接收通知"
+      ],
+      [
+        "emergency",
+        "紧急联系"
+      ],
+      [
+        "general",
+        "一般联系"
+      ]
+    ]
+  },
+  {
+    "dict_code": "md_organization_type",
+    "dict_name": "外部机构类型",
+    "scope": "global",
+    "items": [
+      [
+        "school",
+        "学校"
+      ],
+      [
+        "enterprise",
+        "企业"
+      ],
+      [
+        "government",
+        "政府机关"
+      ],
+      [
+        "other",
+        "其他"
+      ]
+    ]
+  },
+  {
+    "dict_code": "file_kind",
+    "dict_name": "文件类别",
+    "scope": "global",
+    "items": [
+      [
+        "image",
+        "图片"
+      ],
+      [
+        "document",
+        "文档"
+      ],
+      [
+        "video",
+        "视频"
+      ],
+      [
+        "other",
+        "其他"
+      ]
+    ]
+  },
+  {
+    "dict_code": "file_attachment_status",
+    "dict_name": "附件状态",
+    "scope": "global",
+    "items": [
+      [
+        "uploading",
+        "上传中"
+      ],
+      [
+        "pending",
+        "待绑定"
+      ],
+      [
+        "bound",
+        "已绑定"
+      ]
+    ]
+  },
+  {
+    "dict_code": "wf_business_type",
+    "dict_name": "审批业务类型",
+    "scope": "tenant",
+    "items": []
+  },
+  {
+    "dict_code": "wf_definition_version_status",
+    "dict_name": "流程版本状态",
+    "scope": "global",
+    "items": [
+      [
+        "draft",
+        "草稿"
+      ],
+      [
+        "published",
+        "已发布"
+      ],
+      [
+        "offline",
+        "已下线"
+      ]
+    ]
+  },
+  {
+    "dict_code": "wf_instance_status",
+    "dict_name": "流程实例状态",
+    "scope": "global",
+    "items": [
+      [
+        "running",
+        "进行中"
+      ],
+      [
+        "completed",
+        "已完成"
+      ],
+      [
+        "rejected",
+        "已驳回"
+      ],
+      [
+        "cancelled",
+        "已撤销"
+      ]
+    ]
+  },
+  {
+    "dict_code": "wf_task_status",
+    "dict_name": "审批任务状态",
+    "scope": "global",
+    "items": [
+      [
+        "pending",
+        "待处理"
+      ],
+      [
+        "completed",
+        "已处理"
+      ],
+      [
+        "cancelled",
+        "已取消"
+      ]
+    ]
+  },
+  {
+    "dict_code": "wf_assignee_type",
+    "dict_name": "审批人类型",
+    "scope": "global",
+    "items": [
+      [
+        "user",
+        "指定用户"
+      ],
+      [
+        "department_manager",
+        "部门负责人"
+      ],
+      [
+        "business_owner",
+        "业务负责人"
+      ],
+      [
+        "initiator_leader",
+        "发起人上级"
+      ],
+      [
+        "permission",
+        "拥有权限的用户"
+      ],
+      [
+        "starter",
+        "发起人本人"
+      ],
+      [
+        "starter_select",
+        "发起人自选"
+      ]
+    ]
+  },
+  {
+    "dict_code": "wf_approval_mode",
+    "dict_name": "多人审批方式",
+    "scope": "global",
+    "items": [
+      [
+        "single",
+        "单人"
+      ],
+      [
+        "any",
+        "任一人通过"
+      ],
+      [
+        "all",
+        "全部通过"
+      ]
+    ]
+  },
+  {
+    "dict_code": "wf_task_outcome",
+    "dict_name": "审批结果",
+    "scope": "global",
+    "items": [
+      [
+        "approved",
+        "同意"
+      ],
+      [
+        "rejected",
+        "驳回"
+      ],
+      [
+        "returned",
+        "退回"
+      ]
+    ]
+  },
+  {
+    "dict_code": "wf_action",
+    "dict_name": "审批动作",
+    "scope": "global",
+    "items": [
+      [
+        "submit",
+        "提交"
+      ],
+      [
+        "approve",
+        "同意"
+      ],
+      [
+        "reject",
+        "驳回"
+      ],
+      [
+        "return",
+        "退回"
+      ],
+      [
+        "transfer",
+        "转办"
+      ],
+      [
+        "add_sign",
+        "加签"
+      ],
+      [
+        "withdraw",
+        "撤回"
+      ],
+      [
+        "cc",
+        "抄送"
+      ],
+      [
+        "comment",
+        "评论"
+      ]
+    ]
+  },
+  {
+    "dict_code": "wf_cc_type",
+    "dict_name": "抄送对象类型",
+    "scope": "global",
+    "items": [
+      [
+        "user",
+        "用户"
+      ],
+      [
+        "department_manager",
+        "部门负责人"
+      ],
+      [
+        "business_owner",
+        "业务负责人"
+      ],
+      [
+        "initiator_leader",
+        "发起人上级"
+      ],
+      [
+        "permission",
+        "拥有权限的用户"
+      ],
+      [
+        "starter",
+        "发起人本人"
+      ],
+      [
+        "starter_select",
+        "发起人自选"
+      ]
+    ]
+  },
+  {
+    "dict_code": "wf_read_status",
+    "dict_name": "阅读状态",
+    "scope": "global",
+    "items": [
+      [
+        "unread",
+        "未读"
+      ],
+      [
+        "read",
+        "已读"
+      ]
+    ]
+  },
+  {
+    "dict_code": "ntf_notice_type",
+    "dict_name": "公告类型",
+    "scope": "tenant",
+    "items": [
+      [
+        "notice",
+        "通知"
+      ],
+      [
+        "announcement",
+        "公告"
+      ]
+    ]
+  },
+  {
+    "dict_code": "ntf_notice_status",
+    "dict_name": "公告状态",
+    "scope": "global",
+    "items": [
+      [
+        "draft",
+        "草稿"
+      ],
+      [
+        "published",
+        "已发布"
+      ],
+      [
+        "offline",
+        "已下线"
+      ]
+    ]
+  },
+  {
+    "dict_code": "ntf_target_type",
+    "dict_name": "接收对象类型",
+    "scope": "global",
+    "items": [
+      [
+        "all",
+        "全部"
+      ],
+      [
+        "role",
+        "角色"
+      ],
+      [
+        "user",
+        "用户"
+      ],
+      [
+        "permission",
+        "权限"
+      ],
+      [
+        "actor",
+        "业务相关人"
+      ]
+    ]
+  },
+  {
+    "dict_code": "ntf_severity",
+    "dict_name": "重要程度",
+    "scope": "global",
+    "items": [
+      [
+        "normal",
+        "普通"
+      ],
+      [
+        "important",
+        "重要"
+      ],
+      [
+        "urgent",
+        "紧急"
+      ]
+    ]
+  },
+  {
+    "dict_code": "ntf_channel",
+    "dict_name": "通知渠道",
+    "scope": "global",
+    "items": [
+      [
+        "in_app",
+        "站内信"
+      ],
+      [
+        "wechat_service",
+        "微信服务号"
+      ],
+      [
+        "wechat_miniapp_subscribe",
+        "小程序订阅消息"
+      ],
+      [
+        "sms",
+        "短信"
+      ],
+      [
+        "email",
+        "邮件"
+      ]
+    ]
+  },
+  {
+    "dict_code": "ntf_fallback_policy",
+    "dict_name": "渠道降级策略",
+    "scope": "global",
+    "items": [
+      [
+        "none",
+        "不降级"
+      ],
+      [
+        "all",
+        "全部渠道"
+      ]
+    ]
+  },
+  {
+    "dict_code": "ntf_route_org_scope",
+    "dict_name": "通知组织范围",
+    "scope": "global",
+    "items": [
+      [
+        "none",
+        "不限"
+      ],
+      [
+        "event_organization",
+        "事件所属组织"
+      ]
+    ]
+  },
+  {
+    "dict_code": "ntf_notification_status",
+    "dict_name": "通知状态",
+    "scope": "global",
+    "items": [
+      [
+        "created",
+        "已创建"
+      ],
+      [
+        "cancelled",
+        "已取消"
+      ]
+    ]
+  },
+  {
+    "dict_code": "ntf_recipient_status",
+    "dict_name": "阅读状态",
+    "scope": "global",
+    "items": [
+      [
+        "unread",
+        "未读"
+      ],
+      [
+        "read",
+        "已读"
+      ],
+      [
+        "archived",
+        "已归档"
+      ]
+    ]
+  },
+  {
+    "dict_code": "ntf_delivery_status",
+    "dict_name": "投递状态",
+    "scope": "global",
+    "items": [
+      [
+        "pending",
+        "待发送"
+      ],
+      [
+        "sent",
+        "已发送"
+      ],
+      [
+        "failed",
+        "失败"
+      ],
+      [
+        "skipped",
+        "已跳过"
+      ]
+    ]
+  },
+  {
+    "dict_code": "ntf_provider",
+    "dict_name": "通知服务商",
+    "scope": "global",
+    "items": [
+      [
+        "wechat",
+        "微信"
+      ],
+      [
+        "aliyun_sms",
+        "阿里云短信"
+      ],
+      [
+        "smtp",
+        "邮件服务"
+      ]
+    ]
+  },
+  {
+    "dict_code": "ntf_event_status",
+    "dict_name": "事件处理结果",
+    "scope": "global",
+    "items": [
+      [
+        "processed",
+        "已处理"
+      ],
+      [
+        "skipped",
+        "已跳过"
+      ],
+      [
+        "failed",
+        "失败"
+      ]
+    ]
+  },
+  {
+    "dict_code": "audit_action",
+    "dict_name": "操作类型",
+    "scope": "global",
+    "items": [
+      [
+        "create",
+        "新增"
+      ],
+      [
+        "update",
+        "修改"
+      ],
+      [
+        "delete",
+        "删除"
+      ],
+      [
+        "submit",
+        "提交"
+      ],
+      [
+        "approve",
+        "审批"
+      ],
+      [
+        "export",
+        "导出"
+      ],
+      [
+        "import",
+        "导入"
+      ],
+      [
+        "login",
+        "登录"
+      ]
+    ]
+  },
+  {
+    "dict_code": "audit_target_type",
+    "dict_name": "操作对象类型",
+    "scope": "global",
+    "items": [
+      [
+        "user",
+        "用户"
+      ],
+      [
+        "role",
+        "角色"
+      ]
+    ]
+  },
+  {
+    "dict_code": "int_event_type",
+    "dict_name": "事件类型",
+    "scope": "global",
+    "items": []
+  },
+  {
+    "dict_code": "int_outbox_status",
+    "dict_name": "出站状态",
+    "scope": "global",
+    "items": [
+      [
+        "pending",
+        "待发送"
+      ],
+      [
+        "published",
+        "已发送"
+      ],
+      [
+        "failed",
+        "失败"
+      ],
+      [
+        "dead",
+        "死信"
+      ]
+    ]
+  }
+]

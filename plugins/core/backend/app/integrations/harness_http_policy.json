@@ -1,0 +1,171 @@
+{
+  "version": 1,
+  "automatic_reads": true,
+  "all_business_interfaces": true,
+  "modules": {},
+  "models": {},
+  "routes": {
+    "GET /api/mes/work-orders/{order_id}/process-changes": {
+      "mode": "deny"
+    },
+    "POST /api/mes/work-orders/{order_id}/process-changes": {
+      "mode": "deny"
+    },
+    "POST /api/mes/work-orders/{order_id}/process-changes/{change_id}/{action}": {
+      "mode": "deny"
+    },
+    "GET /api/inventory_warehouse/{warehouse_id}/management-access": {
+      "mode": "deny"
+    },
+    "PUT /api/inventory_warehouse/{warehouse_id}/management-access": {
+      "mode": "deny"
+    },
+    "GET /api/inventory_warehouse/{warehouse_id}/requisition-scope": {
+      "mode": "deny"
+    },
+    "PUT /api/inventory_warehouse/{warehouse_id}/requisition-scope": {
+      "mode": "deny"
+    },
+    "GET /api/class_log/{log_id}/recordings": {
+      "mode": "deny"
+    },
+    "POST /api/class_log/{log_id}/recordings/{recording_id}/transcribe": {
+      "mode": "deny"
+    },
+    "POST /api/class_log/{log_id}/recordings/{recording_id}/refresh": {
+      "mode": "deny"
+    },
+    "PUT /api/class_log/{log_id}/recordings/{recording_id}/transcript": {
+      "mode": "deny"
+    },
+    "POST /api/knowledge/bases/{item_id}/documents/manual": {
+      "mode": "write",
+      "max_request_bytes": 4194304
+    },
+    "PUT /api/knowledge/documents/{item_id}/edit": {
+      "mode": "write",
+      "max_request_bytes": 4194304
+    },
+    "POST /api/knowledge/bases/{item_id}/documents/file": {
+      "mode": "deny"
+    },
+    "POST /api/knowledge/bases/{item_id}/documents/upload": {
+      "mode": "write",
+      "max_request_bytes": 28000000
+    },
+    "GET /api/knowledge/connections/{item_id}/models": {
+      "mode": "deny"
+    },
+    "GET /api/knowledge/bases/{item_id}/edit": {
+      "mode": "deny"
+    },
+    "GET /api/knowledge/documents/{item_id}/edit": {
+      "mode": "deny"
+    },
+    "GET /api/knowledge/credentials": {
+      "mode": "deny"
+    },
+    "GET /api/knowledge/connections": {
+      "mode": "deny"
+    },
+    "POST /api/knowledge/connections": {
+      "mode": "deny"
+    },
+    "PUT /api/knowledge/connections/{item_id}": {
+      "mode": "deny"
+    },
+    "POST /api/knowledge/connections/{item_id}/test": {
+      "mode": "deny"
+    },
+    "DELETE /api/knowledge/connections/{item_id}": {
+      "mode": "deny"
+    },
+    "GET /api/knowledge/bases": {
+      "mode": "deny"
+    },
+    "GET /api/knowledge/connections/{item_id}/catalog": {
+      "mode": "deny"
+    },
+    "POST /api/knowledge/bases": {
+      "mode": "deny"
+    },
+    "DELETE /api/knowledge/bases/{item_id}": {
+      "mode": "deny"
+    },
+    "POST /api/knowledge/bases/{item_id}/sync": {
+      "mode": "deny"
+    },
+    "GET /api/knowledge/documents": {
+      "mode": "deny"
+    },
+    "PATCH /api/knowledge/documents/{item_id}": {
+      "mode": "deny"
+    },
+    "GET /api/knowledge/subjects": {
+      "mode": "deny"
+    },
+    "GET /api/knowledge/grants": {
+      "mode": "deny"
+    },
+    "POST /api/knowledge/grants": {
+      "mode": "deny"
+    },
+    "DELETE /api/knowledge/grants/{item_id}": {
+      "mode": "deny"
+    },
+    "GET /api/knowledge/documents/{item_id}/content": {
+      "mode": "deny"
+    },
+    "GET /api/education/student-portraits/history": {
+      "mode": "deny"
+    },
+    "GET /api/education/student-portraits/archive-config": {
+      "mode": "deny"
+    },
+    "PUT /api/education/student-portraits/archive-config": {
+      "mode": "deny"
+    },
+    "GET /api/education/student-portraits/revisions/{portrait_id}": {
+      "mode": "deny"
+    },
+    "POST /api/education/student-portraits/revisions/{portrait_id}/send-to-guardians": {
+      "mode": "deny"
+    },
+    "GET /api/notification_center/mine/detail/{recipient_id}": {
+      "mode": "deny"
+    },
+    "POST /api/knowledge/versions/{item_id}/prepare-business": {
+      "mode": "deny"
+    },
+    "GET /api/knowledge/documents/{item_id}": {
+      "mode": "deny"
+    },
+    "GET /api/education/student-portraits/latest": {
+      "mode": "deny"
+    },
+    "POST /api/education/student-portraits/generate": {
+      "mode": "deny"
+    },
+    "POST /api/education/student-portraits/edit": {
+      "mode": "deny"
+    },
+    "POST /api/class_log/{log_id}/summary": {
+      "mode": "deny"
+    },
+    "POST /api/class_log/{log_id}/student-portrait": {
+      "mode": "deny"
+    },
+    "POST /api/class_log/{log_id}/recordings": {
+      "mode": "deny"
+    },
+    "DELETE /api/class_log/{log_id}/recordings/{recording_id}": {
+      "mode": "deny"
+    },
+    "PUT /api/class_log/{log_id}/recordings/{recording_id}/speakers": {
+      "mode": "deny"
+    },
+    "GET /api/class_log/interview-guide": {
+      "mode": "deny"
+    }
+  }
+}

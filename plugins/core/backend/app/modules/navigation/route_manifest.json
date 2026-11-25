@@ -1,0 +1,3059 @@
+[
+  {
+    "key": "Admissions",
+    "title": "招生",
+    "parent_key": null,
+    "path": "/admissions",
+    "redirect": "/admissions/applicants",
+    "sort_no": 1,
+    "meta": {
+      "icon": "ep/ticket",
+      "title": "menus.admRoot",
+      "rank": 1
+    }
+  },
+  {
+    "key": "AdmApplicants",
+    "title": "招生申请",
+    "parent_key": "Admissions",
+    "path": "/admissions/applicants",
+    "component": "education/list/index",
+    "sort_no": 1,
+    "meta": {
+      "title": "menus.eduApplicant",
+      "entity": "studentApplicant",
+      "permissionPrefix": "admission_application",
+      "permissions": [
+        "admission_application:list"
+      ],
+      "icon": "ep/document"
+    }
+  },
+  {
+    "key": "AdmTeachers",
+    "title": "招生老师",
+    "parent_key": "Admissions",
+    "path": "/admissions/teachers",
+    "component": "education/list/index",
+    "sort_no": 2,
+    "meta": {
+      "title": "menus.admTeacher",
+      "entity": "admissionsTeacher",
+      "permissionPrefix": "admission_teacher",
+      "permissions": [
+        "admission_teacher:list"
+      ],
+      "icon": "ep/avatar"
+    }
+  },
+  {
+    "key": "AdmBrochures",
+    "title": "招生简章",
+    "parent_key": "Admissions",
+    "path": "/admissions/brochures",
+    "component": "education/list/index",
+    "sort_no": 3,
+    "meta": {
+      "title": "menus.eduAdmission",
+      "entity": "studentAdmission",
+      "permissionPrefix": "admission_campaign",
+      "permissions": [
+        "admission_campaign:list"
+      ],
+      "icon": "ep/notebook"
+    }
+  },
+  {
+    "key": "Education",
+    "title": "教务管理",
+    "parent_key": null,
+    "path": "/education",
+    "redirect": "/education/academic-terms",
+    "sort_no": 2,
+    "meta": {
+      "icon": "ep/school",
+      "title": "menus.eduRoot",
+      "rank": 2,
+      "permissions": [
+        "education:list",
+        "education:create",
+        "education:update",
+        "education:delete",
+        "education:import",
+        "education:export",
+        "education:schedule:publish",
+        "education:schedule:view",
+        "education:schedule-change:view",
+        "education:schedule-change:apply",
+        "education:schedule-change:approve",
+        "education:lesson-evaluation:view",
+        "education:lesson-evaluation:manage",
+        "education:lesson-evaluation:score",
+        "education:lesson-evaluation:approve",
+        "education:lesson-evaluation:template",
+        "education:grade:view",
+        "education:grade:entry",
+        "education:satisfaction:view",
+        "education:satisfaction:manage",
+        "asset_handover:mine"
+      ]
+    }
+  },
+  {
+    "key": "EduFoundation",
+    "title": "基础资料",
+    "parent_key": "Education",
+    "path": "/education/foundation",
+    "redirect": "/education/academic-terms",
+    "sort_no": 1,
+    "meta": {
+      "title": "menus.eduFoundationData",
+      "icon": "ep/files",
+      "permissions": [
+        "education:list"
+      ]
+    }
+  },
+  {
+    "key": "EduAcademicYears",
+    "title": "学年",
+    "parent_key": "EduFoundation",
+    "path": "/education/academic-years",
+    "component": "education/list/index",
+    "sort_no": 1,
+    "meta": {
+      "title": "学年",
+      "entity": "academicYear",
+      "icon": "ep/calendar",
+      "auths": [
+        "education:list",
+        "education:create",
+        "education:update",
+        "education:delete",
+        "education:import",
+        "education:export",
+        "education:schedule:publish",
+        "education:schedule:view",
+        "education:schedule-change:view",
+        "education:schedule-change:apply",
+        "education:schedule-change:approve",
+        "education:lesson-evaluation:view",
+        "education:lesson-evaluation:manage",
+        "education:lesson-evaluation:score",
+        "education:lesson-evaluation:approve",
+        "education:lesson-evaluation:template"
+      ]
+    }
+  },
+  {
+    "key": "EduAcademicTerms",
+    "title": "学期",
+    "parent_key": "EduFoundation",
+    "path": "/education/academic-terms",
+    "component": "education/list/index",
+    "sort_no": 2,
+    "meta": {
+      "title": "menus.eduAcademicTerm",
+      "entity": "term",
+      "icon": "ep/calendar",
+      "auths": [
+        "education:list",
+        "education:create",
+        "education:update",
+        "education:delete",
+        "education:import",
+        "education:export",
+        "education:schedule:publish",
+        "education:schedule:view",
+        "education:schedule-change:view",
+        "education:schedule-change:apply",
+        "education:schedule-change:approve",
+        "education:lesson-evaluation:view",
+        "education:lesson-evaluation:manage",
+        "education:lesson-evaluation:score",
+        "education:lesson-evaluation:approve",
+        "education:lesson-evaluation:template"
+      ]
+    }
+  },
+  {
+    "key": "EduTimeSlots",
+    "title": "作息节次",
+    "parent_key": "EduFoundation",
+    "path": "/education/time-slots",
+    "component": "education/list/index",
+    "sort_no": 3,
+    "meta": {
+      "title": "menus.eduTimeSlot",
+      "entity": "timeSlot",
+      "icon": "ep/clock",
+      "auths": [
+        "education:list",
+        "education:create",
+        "education:update",
+        "education:delete",
+        "education:import",
+        "education:export",
+        "education:schedule:publish",
+        "education:schedule:view",
+        "education:schedule-change:view",
+        "education:schedule-change:apply",
+        "education:schedule-change:approve",
+        "education:lesson-evaluation:view",
+        "education:lesson-evaluation:manage",
+        "education:lesson-evaluation:score",
+        "education:lesson-evaluation:approve",
+        "education:lesson-evaluation:template"
+      ]
+    }
+  },
+  {
+    "key": "EduPrograms",
+    "title": "专业",
+    "parent_key": "EduFoundation",
+    "path": "/education/programs",
+    "component": "education/list/index",
+    "sort_no": 4,
+    "meta": {
+      "title": "menus.eduProgram",
+      "entity": "major",
+      "icon": "ep/management",
+      "auths": [
+        "education:list",
+        "education:create",
+        "education:update",
+        "education:delete",
+        "education:import",
+        "education:export",
+        "education:schedule:publish",
+        "education:schedule:view",
+        "education:schedule-change:view",
+        "education:schedule-change:apply",
+        "education:schedule-change:approve",
+        "education:lesson-evaluation:view",
+        "education:lesson-evaluation:manage",
+        "education:lesson-evaluation:score",
+        "education:lesson-evaluation:approve",
+        "education:lesson-evaluation:template"
+      ]
+    }
+  },
+  {
+    "key": "EduInstructors",
+    "title": "教师",
+    "parent_key": "EduFoundation",
+    "path": "/education/instructors",
+    "component": "education/list/index",
+    "sort_no": 5,
+    "meta": {
+      "title": "menus.eduInstructor",
+      "entity": "teacher",
+      "icon": "ep/avatar",
+      "auths": [
+        "education:list",
+        "education:create",
+        "education:update",
+        "education:delete",
+        "education:import",
+        "education:export",
+        "education:schedule:publish",
+        "education:schedule:view",
+        "education:schedule-change:view",
+        "education:schedule-change:apply",
+        "education:schedule-change:approve",
+        "education:lesson-evaluation:view",
+        "education:lesson-evaluation:manage",
+        "education:lesson-evaluation:score",
+        "education:lesson-evaluation:approve",
+        "education:lesson-evaluation:template"
+      ]
+    }
+  },
+  {
+    "key": "EduCourses",
+    "title": "课程",
+    "parent_key": "EduFoundation",
+    "path": "/education/courses",
+    "component": "education/list/index",
+    "sort_no": 6,
+    "meta": {
+      "title": "menus.eduCourse",
+      "entity": "course",
+      "icon": "ep/collection",
+      "auths": [
+        "education:list",
+        "education:create",
+        "education:update",
+        "education:delete",
+        "education:import",
+        "education:export",
+        "education:schedule:publish",
+        "education:schedule:view",
+        "education:schedule-change:view",
+        "education:schedule-change:apply",
+        "education:schedule-change:approve",
+        "education:lesson-evaluation:view",
+        "education:lesson-evaluation:manage",
+        "education:lesson-evaluation:score",
+        "education:lesson-evaluation:approve",
+        "education:lesson-evaluation:template"
+      ]
+    }
+  },
+  {
+    "key": "EduTeacherCourses",
+    "title": "教师课程能力",
+    "parent_key": "EduFoundation",
+    "path": "/education/teacher-courses",
+    "component": "education/list/index",
+    "sort_no": 7,
+    "meta": {
+      "title": "menus.eduTeacherCourse",
+      "entity": "teacherCourse",
+      "icon": "ep/connection",
+      "auths": [
+        "education:list",
+        "education:create",
+        "education:update",
+        "education:delete",
+        "education:import",
+        "education:export",
+        "education:schedule:publish",
+        "education:schedule:view",
+        "education:schedule-change:view",
+        "education:schedule-change:apply",
+        "education:schedule-change:approve",
+        "education:lesson-evaluation:view",
+        "education:lesson-evaluation:manage",
+        "education:lesson-evaluation:score",
+        "education:lesson-evaluation:approve",
+        "education:lesson-evaluation:template"
+      ]
+    }
+  },
+  {
+    "key": "EduRooms",
+    "title": "教室场地",
+    "parent_key": "EduFoundation",
+    "path": "/education/rooms",
+    "component": "education/list/index",
+    "sort_no": 8,
+    "meta": {
+      "title": "menus.eduRoom",
+      "entity": "room",
+      "icon": "ep/office-building",
+      "auths": [
+        "education:list",
+        "education:create",
+        "education:update",
+        "education:delete",
+        "education:import",
+        "education:export",
+        "education:schedule:publish",
+        "education:schedule:view",
+        "education:schedule-change:view",
+        "education:schedule-change:apply",
+        "education:schedule-change:approve",
+        "education:lesson-evaluation:view",
+        "education:lesson-evaluation:manage",
+        "education:lesson-evaluation:score",
+        "education:lesson-evaluation:approve",
+        "education:lesson-evaluation:template"
+      ]
+    }
+  },
+  {
+    "key": "EduClasses",
+    "title": "班级",
+    "parent_key": "EduFoundation",
+    "path": "/education/classes",
+    "component": "education/list/index",
+    "sort_no": 9,
+    "meta": {
+      "title": "menus.eduStudentGroup",
+      "entity": "class",
+      "icon": "ep/user-filled",
+      "auths": [
+        "education:list",
+        "education:create",
+        "education:update",
+        "education:delete",
+        "education:import",
+        "education:export",
+        "education:schedule:publish",
+        "education:schedule:view",
+        "education:schedule-change:view",
+        "education:schedule-change:apply",
+        "education:schedule-change:approve",
+        "education:lesson-evaluation:view",
+        "education:lesson-evaluation:manage",
+        "education:lesson-evaluation:score",
+        "education:lesson-evaluation:approve",
+        "education:lesson-evaluation:template"
+      ]
+    }
+  },
+  {
+    "key": "EduClassMajors",
+    "title": "班级专业",
+    "parent_key": "EduFoundation",
+    "path": "/education/class-majors",
+    "component": "education/list/index",
+    "sort_no": 10,
+    "meta": {
+      "title": "menus.eduClassMajor",
+      "entity": "classMajor",
+      "icon": "ep/share",
+      "auths": [
+        "education:list",
+        "education:create",
+        "education:update",
+        "education:delete",
+        "education:import",
+        "education:export",
+        "education:schedule:publish",
+        "education:schedule:view",
+        "education:schedule-change:view",
+        "education:schedule-change:apply",
+        "education:schedule-change:approve",
+        "education:lesson-evaluation:view",
+        "education:lesson-evaluation:manage",
+        "education:lesson-evaluation:score",
+        "education:lesson-evaluation:approve",
+        "education:lesson-evaluation:template"
+      ]
+    }
+  },
+  {
+    "key": "EduSchedulingPreparation",
+    "title": "排课准备",
+    "parent_key": "Education",
+    "path": "/education/scheduling-preparation",
+    "redirect": "/education/course-offerings",
+    "sort_no": 2,
+    "meta": {
+      "title": "menus.eduSchedulingPreparation",
+      "icon": "ep/calendar",
+      "permissions": [
+        "education:list"
+      ]
+    }
+  },
+  {
+    "key": "EduTimetable",
+    "title": "课表编制",
+    "parent_key": "EduSchedulingPreparation",
+    "path": "/education/timetable",
+    "component": "education/timetable/index",
+    "sort_no": 1,
+    "meta": {
+      "title": "menus.eduTimetable",
+      "icon": "ep/grid",
+      "auths": [
+        "education:list",
+        "education:create",
+        "education:update",
+        "education:delete",
+        "education:import",
+        "education:export",
+        "education:schedule:publish",
+        "education:schedule:view",
+        "education:schedule-change:view",
+        "education:schedule-change:apply",
+        "education:schedule-change:approve",
+        "education:lesson-evaluation:view",
+        "education:lesson-evaluation:manage",
+        "education:lesson-evaluation:score",
+        "education:lesson-evaluation:approve",
+        "education:lesson-evaluation:template"
+      ]
+    }
+  },
+  {
+    "key": "EduTeacherScheduleProfiles",
+    "title": "教师排课配置",
+    "parent_key": "EduSchedulingPreparation",
+    "path": "/education/teacher-schedule-profiles",
+    "component": "education/list/index",
+    "sort_no": 2,
+    "meta": {
+      "title": "menus.eduTeacherScheduleProfile",
+      "entity": "teacherScheduleProfile",
+      "icon": "ep/setting",
+      "auths": [
+        "education:list",
+        "education:create",
+        "education:update",
+        "education:delete",
+        "education:import",
+        "education:export",
+        "education:schedule:publish",
+        "education:schedule:view",
+        "education:schedule-change:view",
+        "education:schedule-change:apply",
+        "education:schedule-change:approve",
+        "education:lesson-evaluation:view",
+        "education:lesson-evaluation:manage",
+        "education:lesson-evaluation:score",
+        "education:lesson-evaluation:approve",
+        "education:lesson-evaluation:template"
+      ]
+    }
+  },
+  {
+    "key": "EduCourseOfferings",
+    "title": "开课计划",
+    "parent_key": "EduSchedulingPreparation",
+    "path": "/education/course-offerings",
+    "component": "education/list/index",
+    "sort_no": 3,
+    "meta": {
+      "title": "menus.eduCourseOffering",
+      "entity": "courseOffering",
+      "icon": "ep/notebook",
+      "auths": [
+        "education:list",
+        "education:create",
+        "education:update",
+        "education:delete",
+        "education:import",
+        "education:export",
+        "education:schedule:publish",
+        "education:schedule:view",
+        "education:schedule-change:view",
+        "education:schedule-change:apply",
+        "education:schedule-change:approve",
+        "education:lesson-evaluation:view",
+        "education:lesson-evaluation:manage",
+        "education:lesson-evaluation:score",
+        "education:lesson-evaluation:approve",
+        "education:lesson-evaluation:template"
+      ]
+    }
+  },
+  {
+    "key": "EduTeacherUnavailable",
+    "title": "教师不可排时间",
+    "parent_key": "EduSchedulingPreparation",
+    "path": "/education/teacher-unavailable",
+    "component": "education/list/index",
+    "sort_no": 4,
+    "meta": {
+      "title": "menus.eduTeacherUnavailable",
+      "entity": "teacherUnavailable",
+      "icon": "ep/calendar",
+      "auths": [
+        "education:list",
+        "education:create",
+        "education:update",
+        "education:delete",
+        "education:import",
+        "education:export",
+        "education:schedule:publish",
+        "education:schedule:view",
+        "education:schedule-change:view",
+        "education:schedule-change:apply",
+        "education:schedule-change:approve",
+        "education:lesson-evaluation:view",
+        "education:lesson-evaluation:manage",
+        "education:lesson-evaluation:score",
+        "education:lesson-evaluation:approve",
+        "education:lesson-evaluation:template"
+      ]
+    }
+  },
+  {
+    "key": "EduSchedulingRules",
+    "title": "排课规则",
+    "parent_key": "EduSchedulingPreparation",
+    "path": "/education/scheduling-rules",
+    "component": "education/list/index",
+    "sort_no": 5,
+    "meta": {
+      "title": "menus.eduSchedulingRule",
+      "entity": "schedulingRule",
+      "icon": "ep/set-up",
+      "auths": [
+        "education:list",
+        "education:create",
+        "education:update",
+        "education:delete",
+        "education:import",
+        "education:export",
+        "education:schedule:publish",
+        "education:schedule:view",
+        "education:schedule-change:view",
+        "education:schedule-change:apply",
+        "education:schedule-change:approve",
+        "education:lesson-evaluation:view",
+        "education:lesson-evaluation:manage",
+        "education:lesson-evaluation:score",
+        "education:lesson-evaluation:approve",
+        "education:lesson-evaluation:template"
+      ]
+    }
+  },
+  {
+    "key": "EduTeachingOperation",
+    "title": "教学运行",
+    "parent_key": "Education",
+    "path": "/education/teaching-operation",
+    "redirect": "/education/timetable-query",
+    "sort_no": 3,
+    "meta": {
+      "title": "menus.eduTeachingOperation",
+      "icon": "ep/data-analysis"
+    }
+  },
+  {
+    "key": "EduTimetableQuery",
+    "title": "课表查询",
+    "parent_key": "EduTeachingOperation",
+    "path": "/education/timetable-query",
+    "component": "education/timetable-query/index",
+    "sort_no": 1,
+    "meta": {
+      "title": "menus.eduTimetableQuery",
+      "icon": "ep/calendar",
+      "auths": [
+        "education:schedule:view"
+      ]
+    }
+  },
+  {
+    "key": "EduScheduleChanges",
+    "title": "调代课管理",
+    "parent_key": "EduTeachingOperation",
+    "path": "/education/schedule-changes",
+    "component": "education/schedule-changes/index",
+    "sort_no": 2,
+    "meta": {
+      "title": "menus.eduScheduleChanges",
+      "icon": "ep/switch",
+      "auths": [
+        "education:schedule-change:view",
+        "education:schedule-change:apply",
+        "education:schedule-change:approve"
+      ]
+    }
+  },
+  {
+    "key": "EduTeacherSatisfaction",
+    "title": "教师满意度调查",
+    "parent_key": "EduTeachingOperation",
+    "path": "/education/satisfaction",
+    "component": "education/satisfaction/index",
+    "sort_no": 3,
+    "meta": {
+      "title": "教师满意度调查",
+      "icon": "ep/chat-dot-square",
+      "auths": [
+        "education:satisfaction:view"
+      ]
+    }
+  },
+  {
+    "key": "EduLessonEvaluations",
+    "title": "听评课管理",
+    "parent_key": "EduTeachingOperation",
+    "path": "/education/lesson-evaluations",
+    "component": "education/lesson-evaluation/index",
+    "sort_no": 4,
+    "meta": {
+      "title": "menus.eduLessonEvaluations",
+      "icon": "ep/document-checked",
+      "auths": [
+        "education:lesson-evaluation:view",
+        "education:lesson-evaluation:manage",
+        "education:lesson-evaluation:score",
+        "education:lesson-evaluation:approve"
+      ]
+    }
+  },
+  {
+    "key": "EduLessonEvaluationTemplates",
+    "title": "听评课模板",
+    "parent_key": "EduTeachingOperation",
+    "path": "/education/lesson-evaluation-templates",
+    "component": "education/lesson-evaluation/templates",
+    "sort_no": 5,
+    "meta": {
+      "title": "menus.eduLessonEvaluationTemplates",
+      "icon": "ep/memo",
+      "auths": [
+        "education:lesson-evaluation:template"
+      ]
+    }
+  },
+  {
+    "key": "EduStudentWorks",
+    "title": "学生作品",
+    "parent_key": "EduTeachingOperation",
+    "path": "/education/student-works",
+    "component": "education/student-works/index",
+    "sort_no": 6,
+    "meta": {
+      "title": "menus.eduStudentWorks",
+      "icon": "ep/picture-rounded"
+    }
+  },
+  {
+    "key": "EduLessonPlanCheck",
+    "title": "教案检查",
+    "parent_key": "Education",
+    "path": "/education/lesson-plan-check",
+    "component": "education/lesson-plan-check/index",
+    "sort_no": 4,
+    "meta": {
+      "title": "教案检查",
+      "icon": "ri:file-check-line",
+      "permissions": [
+        "lesson_plan:list",
+        "lesson_plan:manage",
+        "lesson_plan:submit",
+        "lesson_plan:review"
+      ]
+    }
+  },
+  {
+    "key": "EduHomeworkCollection",
+    "title": "作业收集与抽查",
+    "parent_key": "Education",
+    "path": "/education/homework-collection",
+    "component": "education/homework-collection/index",
+    "sort_no": 5,
+    "meta": {
+      "title": "作业收集与抽查",
+      "icon": "ri:folder-upload-line",
+      "permissions": [
+        "homework_collection:list",
+        "homework_collection:manage",
+        "homework_collection:review"
+      ]
+    }
+  },
+  {
+    "key": "EduTeachingQualityEvaluation",
+    "title": "教学质量评估",
+    "parent_key": "Education",
+    "path": "/education/teaching-quality-evaluation",
+    "component": "education/teaching-quality/index",
+    "sort_no": 6,
+    "meta": {
+      "title": "教学质量评估",
+      "icon": "ri:bar-chart-box-line",
+      "permissions": [
+        "education:list",
+        "education:schedule:view"
+      ]
+    }
+  },
+  {
+    "key": "EduTeacherDuty",
+    "title": "教师坐班",
+    "parent_key": "Education",
+    "path": "/education/teacher-duty",
+    "component": "education/teacher-duty/index",
+    "sort_no": 7,
+    "meta": {
+      "title": "教师坐班",
+      "icon": "ri:user-location-line",
+      "permissions": [
+        "education:list",
+        "education:schedule:view"
+      ]
+    }
+  },
+  {
+    "key": "EduEmploymentStatistics",
+    "title": "就业/升学统计",
+    "parent_key": "Education",
+    "path": "/education/employment-statistics",
+    "component": "education/employment-statistics/index",
+    "sort_no": 8,
+    "meta": {
+      "title": "就业/升学统计",
+      "icon": "ri:briefcase-4-line",
+      "permissions": [
+        "education:list",
+        "education:schedule:view"
+      ]
+    }
+  },
+  {
+    "key": "EduAcademicMaterialApply",
+    "title": "教材物品领用",
+    "parent_key": "Education",
+    "path": "/education/material-apply",
+    "component": "education/materials/apply/index",
+    "sort_no": 9,
+    "meta": {
+      "title": "教材物品领用",
+      "icon": "ri:book-open-line",
+      "permissions": [
+        "education:list",
+        "education:schedule:view"
+      ]
+    }
+  },
+  {
+    "key": "EduAcademicMaterials",
+    "title": "教材物品仓库",
+    "parent_key": "Education",
+    "path": "/education/materials",
+    "redirect": "/education/materials/stock",
+    "sort_no": 10,
+    "meta": {
+      "title": "教材物品仓库",
+      "icon": "ri:archive-stack-line",
+      "permissions": [
+        "education:update"
+      ]
+    }
+  },
+  {
+    "key": "EduAcademicMaterialStock",
+    "title": "库存台账",
+    "parent_key": "EduAcademicMaterials",
+    "path": "/education/materials/stock",
+    "component": "education/materials/stock/index",
+    "sort_no": 1,
+    "meta": {
+      "title": "库存台账",
+      "icon": "ri:stack-line",
+      "permissions": [
+        "education:update"
+      ]
+    }
+  },
+  {
+    "key": "EduAcademicMaterialInbound",
+    "title": "入库管理",
+    "parent_key": "EduAcademicMaterials",
+    "path": "/education/materials/inbound",
+    "component": "education/materials/inbound/index",
+    "sort_no": 2,
+    "meta": {
+      "title": "入库管理",
+      "icon": "ri:login-box-line",
+      "permissions": [
+        "education:update"
+      ]
+    }
+  },
+  {
+    "key": "EduAcademicMaterialApproval",
+    "title": "领用审核",
+    "parent_key": "EduAcademicMaterials",
+    "path": "/education/materials/approval",
+    "component": "education/materials/approval/index",
+    "sort_no": 3,
+    "meta": {
+      "title": "领用审核",
+      "icon": "ri:task-line",
+      "permissions": [
+        "education:update"
+      ]
+    }
+  },
+  {
+    "key": "EduAcademicMaterialMovements",
+    "title": "库存流水",
+    "parent_key": "EduAcademicMaterials",
+    "path": "/education/materials/movements",
+    "component": "education/materials/movements/index",
+    "sort_no": 4,
+    "meta": {
+      "title": "库存流水",
+      "icon": "ri:file-list-3-line",
+      "permissions": [
+        "education:update"
+      ]
+    }
+  },
+  {
+    "key": "EduTrainingRoom",
+    "title": "实训室管理",
+    "parent_key": "Education",
+    "path": "/education/training-room",
+    "component": "training-room/usage/index",
+    "sort_no": 11,
+    "meta": {
+      "title": "实训室管理",
+      "icon": "ri:computer-line",
+      "permissions": [
+        "education:list",
+        "education:create",
+        "education:update",
+        "education:delete",
+        "education:import",
+        "education:export",
+        "education:schedule:publish",
+        "education:schedule:view",
+        "education:schedule-change:view",
+        "education:schedule-change:apply",
+        "education:schedule-change:approve",
+        "education:lesson-evaluation:view",
+        "education:lesson-evaluation:manage",
+        "education:lesson-evaluation:score",
+        "education:lesson-evaluation:approve",
+        "education:lesson-evaluation:template",
+        "education:grade:view",
+        "education:grade:entry",
+        "education:satisfaction:view",
+        "education:satisfaction:manage",
+        "asset_handover:mine"
+      ]
+    }
+  },
+  {
+    "key": "EduCourseware",
+    "title": "课件云盘",
+    "parent_key": "Education",
+    "path": "/education/courseware",
+    "component": "education/courseware/index",
+    "sort_no": 12,
+    "meta": {
+      "title": "课件云盘",
+      "icon": "ri:cloud-line",
+      "permissions": [
+        "education:list",
+        "education:schedule:view"
+      ]
+    }
+  },
+  {
+    "key": "EduCoursewarePresentation",
+    "title": "课件授课",
+    "parent_key": "Education",
+    "path": "/education/courseware/presentation/:id",
+    "component": "education/courseware/presentation",
+    "sort_no": 13,
+    "meta": {
+      "title": "课件授课",
+      "showLink": false,
+      "activePath": "/education/courseware",
+      "permissions": [
+        "education:list",
+        "education:schedule:view"
+      ]
+    }
+  },
+  {
+    "key": "EduInspectionMaterials",
+    "title": "巡检资料",
+    "parent_key": "Education",
+    "path": "/education/inspection-materials",
+    "redirect": "/education/inspection-materials/tasks",
+    "sort_no": 14,
+    "meta": {
+      "title": "巡检资料",
+      "icon": "ri:folder-shield-2-line",
+      "permissions": [
+        "education:list",
+        "education:schedule:view"
+      ]
+    }
+  },
+  {
+    "key": "EduInspectionMaterialTasks",
+    "title": "巡检任务",
+    "parent_key": "EduInspectionMaterials",
+    "path": "/education/inspection-materials/tasks",
+    "component": "education/inspection-materials/index",
+    "sort_no": 1,
+    "meta": {
+      "title": "巡检任务",
+      "icon": "ri:list-check-3",
+      "permissions": [
+        "education:list",
+        "education:schedule:view"
+      ]
+    }
+  },
+  {
+    "key": "EduInspectionMaterialsTemplates",
+    "title": "指标模板管理",
+    "parent_key": "EduInspectionMaterials",
+    "path": "/education/inspection-materials/templates",
+    "component": "education/inspection-materials/templates",
+    "sort_no": 2,
+    "meta": {
+      "title": "指标模板管理",
+      "icon": "ri:file-settings-line",
+      "permissions": [
+        "education:list",
+        "education:schedule:view"
+      ]
+    }
+  },
+  {
+    "key": "EduInspectionMaterialsWorkspace",
+    "title": "巡检资料工作台",
+    "parent_key": "EduInspectionMaterials",
+    "path": "/education/inspection-materials/workspace/:id",
+    "component": "education/inspection-materials/workspace",
+    "sort_no": 3,
+    "meta": {
+      "title": "巡检资料工作台",
+      "showLink": false,
+      "activePath": "/education/inspection-materials/tasks",
+      "permissions": [
+        "education:list",
+        "education:schedule:view"
+      ]
+    }
+  },
+  {
+    "key": "EduExamSecurity",
+    "title": "题库与智能组卷",
+    "parent_key": "Education",
+    "path": "/education/exam-security",
+    "redirect": "/education/exam-security/questions",
+    "sort_no": 15,
+    "meta": {
+      "title": "题库与智能组卷",
+      "icon": "ri:shield-keyhole-line",
+      "permissions": [
+        "education:list",
+        "education:schedule:view"
+      ]
+    }
+  },
+  {
+    "key": "EduExamQuestionBank",
+    "title": "题库管理",
+    "parent_key": "EduExamSecurity",
+    "path": "/education/exam-security/questions",
+    "component": "education/exam-security/question-bank",
+    "sort_no": 1,
+    "meta": {
+      "title": "题库管理",
+      "icon": "ri:archive-stack-line",
+      "permissions": [
+        "education:list",
+        "education:schedule:view"
+      ]
+    }
+  },
+  {
+    "key": "EduExamQuestionReview",
+    "title": "试题审核",
+    "parent_key": "EduExamSecurity",
+    "path": "/education/exam-security/review",
+    "component": "education/exam-security/question-review",
+    "sort_no": 2,
+    "meta": {
+      "title": "试题审核",
+      "icon": "ri:verified-badge-line",
+      "permissions": [
+        "education:update"
+      ]
+    }
+  },
+  {
+    "key": "EduAiPaperGenerate",
+    "title": "AI 智能组卷",
+    "parent_key": "EduExamSecurity",
+    "path": "/education/exam-security/generate",
+    "component": "education/exam-security/paper-generate",
+    "sort_no": 3,
+    "meta": {
+      "title": "AI 智能组卷",
+      "icon": "ri:magic-line",
+      "permissions": [
+        "education:update"
+      ]
+    }
+  },
+  {
+    "key": "EduExamPaperManagement",
+    "title": "试卷管理",
+    "parent_key": "EduExamSecurity",
+    "path": "/education/exam-security/papers",
+    "component": "education/exam-security/paper-management",
+    "sort_no": 4,
+    "meta": {
+      "title": "试卷管理",
+      "icon": "ri:file-lock-line",
+      "permissions": [
+        "education:update"
+      ]
+    }
+  },
+  {
+    "key": "EduTeacherOffboarding",
+    "title": "离职交接",
+    "parent_key": "Education",
+    "path": "/education/offboarding",
+    "component": "personnel/offboarding/index",
+    "sort_no": 16,
+    "meta": {
+      "title": "离职交接",
+      "icon": "ri:user-unfollow-line",
+      "permissions": [
+        "education:list",
+        "education:create",
+        "education:update",
+        "education:delete",
+        "education:import",
+        "education:export",
+        "education:schedule:publish",
+        "education:schedule:view",
+        "education:schedule-change:view",
+        "education:schedule-change:apply",
+        "education:schedule-change:approve",
+        "education:lesson-evaluation:view",
+        "education:lesson-evaluation:manage",
+        "education:lesson-evaluation:score",
+        "education:lesson-evaluation:approve",
+        "education:lesson-evaluation:template",
+        "education:grade:view",
+        "education:grade:entry",
+        "education:satisfaction:view",
+        "education:satisfaction:manage",
+        "asset_handover:mine"
+      ]
+    }
+  },
+  {
+    "key": "EduTeacherOffboardingProcess",
+    "title": "离职交接办理",
+    "parent_key": "Education",
+    "path": "/education/offboarding/:id",
+    "component": "personnel/offboarding/process",
+    "sort_no": 17,
+    "meta": {
+      "title": "离职交接办理",
+      "showLink": false,
+      "activePath": "/education/offboarding",
+      "permissions": [
+        "education:list",
+        "education:create",
+        "education:update",
+        "education:delete",
+        "education:import",
+        "education:export",
+        "education:schedule:publish",
+        "education:schedule:view",
+        "education:schedule-change:view",
+        "education:schedule-change:apply",
+        "education:schedule-change:approve",
+        "education:lesson-evaluation:view",
+        "education:lesson-evaluation:manage",
+        "education:lesson-evaluation:score",
+        "education:lesson-evaluation:approve",
+        "education:lesson-evaluation:template",
+        "education:grade:view",
+        "education:grade:entry",
+        "education:satisfaction:view",
+        "education:satisfaction:manage",
+        "asset_handover:mine"
+      ]
+    }
+  },
+  {
+    "key": "EduTeacherOffboardingAssets",
+    "title": "离职资产接收",
+    "parent_key": "Education",
+    "path": "/education/offboarding/:id/assets",
+    "component": "asset-management/handover",
+    "sort_no": 18,
+    "meta": {
+      "title": "离职资产接收",
+      "showLink": false,
+      "activePath": "/education/offboarding",
+      "permissions": [
+        "education:list",
+        "education:create",
+        "education:update",
+        "education:delete",
+        "education:import",
+        "education:export",
+        "education:schedule:publish",
+        "education:schedule:view",
+        "education:schedule-change:view",
+        "education:schedule-change:apply",
+        "education:schedule-change:approve",
+        "education:lesson-evaluation:view",
+        "education:lesson-evaluation:manage",
+        "education:lesson-evaluation:score",
+        "education:lesson-evaluation:approve",
+        "education:lesson-evaluation:template",
+        "education:grade:view",
+        "education:grade:entry",
+        "education:satisfaction:view",
+        "education:satisfaction:manage",
+        "asset_handover:mine"
+      ]
+    }
+  },
+  {
+    "key": "EduMyAssetHandovers",
+    "title": "我的资产交接",
+    "parent_key": "Education",
+    "path": "/education/my-asset-handovers",
+    "component": "asset-management/handover",
+    "sort_no": 19,
+    "meta": {
+      "title": "我的资产交接",
+      "icon": "ri:swap-2-line",
+      "permissions": [
+        "asset_handover:mine"
+      ]
+    }
+  },
+  {
+    "key": "EduExamGrades",
+    "title": "考试成绩",
+    "parent_key": "Education",
+    "path": "/education/exam-grades",
+    "component": "education/exam-grades/index",
+    "sort_no": 20,
+    "meta": {
+      "title": "menus.eduExamGrades",
+      "icon": "ep/data-line",
+      "auths": [
+        "education:grade:view",
+        "education:grade:entry",
+        "education:grade:review",
+        "education:grade:config"
+      ]
+    }
+  },
+  {
+    "key": "EduMyTeacherPortrait",
+    "title": "教师个人画像",
+    "parent_key": "Education",
+    "path": "/education/my-teacher-portrait",
+    "component": "education/teacher-portrait/index",
+    "sort_no": 22,
+    "meta": {
+      "title": "教师个人画像",
+      "icon": "ri:user-star-line",
+      "permissions": [
+        "education:list",
+        "education:schedule:view"
+      ]
+    }
+  },
+  {
+    "key": "EduTeacherPortraitSummary",
+    "title": "教务科汇总画像",
+    "parent_key": "Education",
+    "path": "/education/teacher-portrait-summary",
+    "component": "education/teacher-portrait/TeacherPortraitSummary",
+    "sort_no": 23,
+    "meta": {
+      "title": "教务科汇总画像",
+      "icon": "ri:team-line",
+      "permissions": [
+        "education:update"
+      ]
+    }
+  },
+  {
+    "key": "EduTeacherPortraitDetail",
+    "title": "教师个人画像",
+    "parent_key": "Education",
+    "path": "/education/teacher-portrait/:id",
+    "component": "education/teacher-portrait/index",
+    "sort_no": 24,
+    "meta": {
+      "title": "教师个人画像",
+      "showLink": false,
+      "permissions": [
+        "education:update"
+      ],
+      "activePath": "/education/instructors"
+    }
+  },
+  {
+    "key": "EducationInstructor",
+    "title": "教师",
+    "parent_key": "Education",
+    "path": "/education/instructor",
+    "redirect": "/education/instructors",
+    "sort_no": 25,
+    "meta": {
+      "title": "menus.eduInstructor",
+      "showLink": false
+    }
+  },
+  {
+    "key": "EducationProgram",
+    "title": "专业",
+    "parent_key": "Education",
+    "path": "/education/program",
+    "redirect": "/education/programs",
+    "sort_no": 26,
+    "meta": {
+      "title": "menus.eduProgram",
+      "showLink": false
+    }
+  },
+  {
+    "key": "EducationCourse",
+    "title": "课程",
+    "parent_key": "Education",
+    "path": "/education/course",
+    "redirect": "/education/courses",
+    "sort_no": 27,
+    "meta": {
+      "title": "menus.eduCourse",
+      "showLink": false
+    }
+  },
+  {
+    "key": "EducationTeacherCourse",
+    "title": "教师课程能力",
+    "parent_key": "Education",
+    "path": "/education/teacher-course",
+    "redirect": "/education/teacher-courses",
+    "sort_no": 28,
+    "meta": {
+      "title": "menus.eduTeacherCourse",
+      "showLink": false
+    }
+  },
+  {
+    "key": "EducationRoom",
+    "title": "教室场地",
+    "parent_key": "Education",
+    "path": "/education/room",
+    "redirect": "/education/rooms",
+    "sort_no": 29,
+    "meta": {
+      "title": "menus.eduRoom",
+      "showLink": false
+    }
+  },
+  {
+    "key": "Students",
+    "title": "学生",
+    "parent_key": null,
+    "path": "/students",
+    "redirect": "/students/list",
+    "sort_no": 3,
+    "meta": {
+      "icon": "ep/user",
+      "title": "menus.stuRoot",
+      "rank": 3,
+      "permissions": [
+        "student:list",
+        "attendance:list",
+        "dormitory:list",
+        "student_leave:list",
+        "registration_change:list",
+        "guardian:list",
+        "phone:list",
+        "class_log:list",
+        "safety_incident:list",
+        "anonymous_report:list",
+        "hygiene:list",
+        "duty_eight:list",
+        "holiday_homework:list",
+        "homeroom_ledger:list",
+        "homeroom_performance:list",
+        "homeroom_salary:list",
+        "homeroom_payroll:list"
+      ]
+    }
+  },
+  {
+    "key": "StudentsRecords",
+    "title": "学生信息",
+    "parent_key": "Students",
+    "path": "/students/records",
+    "redirect": "/students/list",
+    "sort_no": 1,
+    "meta": {
+      "title": "menus.eduStudentMgmt",
+      "icon": "ep/user"
+    }
+  },
+  {
+    "key": "StudentsStatus",
+    "title": "学籍",
+    "parent_key": "StudentsRecords",
+    "path": "/students/status",
+    "redirect": "/students/status/applications",
+    "sort_no": 1,
+    "meta": {
+      "title": "menus.eduAcademicStatus",
+      "icon": "ep/document"
+    }
+  },
+  {
+    "key": "StuAcademicStatusApplications",
+    "title": "学籍变更",
+    "parent_key": "StudentsStatus",
+    "path": "/students/status/applications",
+    "component": "students/status/index",
+    "sort_no": 1,
+    "meta": {
+      "title": "menus.eduAcademicStatusApplications",
+      "academicStatusView": "all",
+      "permissions": [
+        "registration_change:list"
+      ],
+      "icon": "ep/document"
+    }
+  },
+  {
+    "key": "StuList",
+    "title": "学生",
+    "parent_key": "StudentsRecords",
+    "path": "/students/list",
+    "component": "education/list/index",
+    "sort_no": 2,
+    "meta": {
+      "title": "menus.eduStudent",
+      "entity": "student",
+      "icon": "ep/avatar"
+    }
+  },
+  {
+    "key": "StuProfile",
+    "title": "学生档案",
+    "parent_key": "StudentsRecords",
+    "path": "/students/list/profile/:id",
+    "component": "education/student/index",
+    "sort_no": 3,
+    "meta": {
+      "title": "menus.eduStudentProfile",
+      "showLink": false,
+      "activePath": "/students/list"
+    }
+  },
+  {
+    "key": "StuPortrait",
+    "title": "学生画像",
+    "parent_key": "StudentsRecords",
+    "path": "/students/list/portrait/:id",
+    "component": "education/student/portrait",
+    "sort_no": 4,
+    "meta": {
+      "title": "menus.eduStudentPortrait",
+      "showLink": false,
+      "activePath": "/students/list"
+    }
+  },
+  {
+    "key": "StuGroups",
+    "title": "班级",
+    "parent_key": "StudentsRecords",
+    "path": "/students/groups",
+    "component": "education/list/index",
+    "sort_no": 5,
+    "meta": {
+      "title": "menus.eduStudentGroup",
+      "entity": "studentGroup",
+      "icon": "ep/user-filled",
+      "auths": [
+        "education:list"
+      ],
+      "showLink": false
+    }
+  },
+  {
+    "key": "StuClassMajors",
+    "title": "班级专业",
+    "parent_key": "StudentsRecords",
+    "path": "/students/class-majors",
+    "component": "education/list/index",
+    "sort_no": 6,
+    "meta": {
+      "title": "menus.eduClassMajor",
+      "entity": "classMajor",
+      "icon": "ep/connection",
+      "auths": [
+        "education:list"
+      ],
+      "showLink": false
+    }
+  },
+  {
+    "key": "StuGuardians",
+    "title": "监护人",
+    "parent_key": "StudentsRecords",
+    "path": "/students/guardians",
+    "component": "education/list/index",
+    "sort_no": 7,
+    "meta": {
+      "title": "menus.eduGuardian",
+      "entity": "guardian",
+      "permissionPrefix": "guardian",
+      "permissions": [
+        "guardian:list"
+      ],
+      "icon": "ep/stamp"
+    }
+  },
+  {
+    "key": "StuLeague",
+    "title": "团委工作",
+    "parent_key": "StudentsRecords",
+    "path": "/students/league",
+    "component": "students/league/index",
+    "sort_no": 8,
+    "meta": {
+      "title": "menus.stuLeague",
+      "icon": "ri:flag-2-line"
+    }
+  },
+  {
+    "key": "StudentsLeave",
+    "title": "请假管理",
+    "parent_key": "Students",
+    "path": "/students/leave",
+    "redirect": "/students/leave/applications",
+    "sort_no": 2,
+    "meta": {
+      "title": "menus.eduLeave",
+      "icon": "ep/message"
+    }
+  },
+  {
+    "key": "StuLeaveApplications",
+    "title": "请假申请",
+    "parent_key": "StudentsLeave",
+    "path": "/students/leave/applications",
+    "component": "students/leave/index",
+    "sort_no": 1,
+    "meta": {
+      "title": "menus.eduLeaveApplications",
+      "leaveView": "apply",
+      "icon": "ep/document-add",
+      "permissions": [
+        "student_leave:list"
+      ]
+    }
+  },
+  {
+    "key": "StuLeaveGate",
+    "title": "门禁核验",
+    "parent_key": "StudentsLeave",
+    "path": "/students/leave/gate",
+    "component": "students/leave/index",
+    "sort_no": 2,
+    "meta": {
+      "title": "menus.eduLeaveGate",
+      "leaveView": "gate",
+      "icon": "ep/key",
+      "permissions": [
+        "student_leave:list"
+      ]
+    }
+  },
+  {
+    "key": "StudentsAttendance",
+    "title": "学生考勤",
+    "parent_key": "Students",
+    "path": "/students/attendance",
+    "redirect": "/students/attendance/sessions",
+    "sort_no": 3,
+    "meta": {
+      "title": "menus.eduAttendance",
+      "icon": "ep/circle-check"
+    }
+  },
+  {
+    "key": "StuAttendanceSessions",
+    "title": "考勤记录",
+    "parent_key": "StudentsAttendance",
+    "path": "/students/attendance/sessions",
+    "component": "students/attendance/index",
+    "sort_no": 1,
+    "meta": {
+      "title": "menus.eduAttendanceRecords",
+      "icon": "ep/circle-check"
+    }
+  },
+  {
+    "key": "StuAttendanceAbsences",
+    "title": "缺勤记录",
+    "parent_key": "StudentsAttendance",
+    "path": "/students/attendance/absences",
+    "component": "students/attendance/absences",
+    "sort_no": 2,
+    "meta": {
+      "title": "menus.eduAbsenceRecords",
+      "icon": "ep/warning"
+    }
+  },
+  {
+    "key": "StuAttendanceReviews",
+    "title": "缺勤核实",
+    "parent_key": "StudentsAttendance",
+    "path": "/students/attendance/reviews",
+    "component": "students/attendance/reviews",
+    "sort_no": 3,
+    "meta": {
+      "title": "menus.eduAttendanceReviews",
+      "icon": "ep/finished"
+    }
+  },
+  {
+    "key": "StuPhoneHandover",
+    "title": "手机收发",
+    "parent_key": "StudentsAttendance",
+    "path": "/students/attendance/phone",
+    "component": "students/phone/index",
+    "sort_no": 4,
+    "meta": {
+      "title": "menus.stuPhone",
+      "permissions": [
+        "phone:list"
+      ],
+      "icon": "ri:smartphone-line"
+    }
+  },
+  {
+    "key": "StudentsDormitory",
+    "title": "住宿管理",
+    "parent_key": "Students",
+    "path": "/students/dormitory",
+    "redirect": "/students/dormitory/overview",
+    "sort_no": 4,
+    "meta": {
+      "title": "menus.stuDormAssign",
+      "icon": "ri:hotel-bed-line",
+      "permissions": [
+        "dormitory:list"
+      ]
+    }
+  },
+  {
+    "key": "StuDormitoryOverview",
+    "title": "宿舍总览",
+    "parent_key": "StudentsDormitory",
+    "path": "/students/dormitory/overview",
+    "component": "students/dormitory/index",
+    "sort_no": 1,
+    "meta": {
+      "title": "menus.stuDormOverview",
+      "dormitoryView": "overview",
+      "icon": "ep/house",
+      "permissions": [
+        "dormitory:list"
+      ]
+    }
+  },
+  {
+    "key": "StuDormitoryRecords",
+    "title": "入住记录",
+    "parent_key": "StudentsDormitory",
+    "path": "/students/dormitory/records",
+    "component": "students/dormitory/index",
+    "sort_no": 2,
+    "meta": {
+      "title": "menus.stuDormRecords",
+      "dormitoryView": "records",
+      "icon": "ep/list",
+      "permissions": [
+        "dormitory:list"
+      ]
+    }
+  },
+  {
+    "key": "StuDormitoryAdjustments",
+    "title": "调整记录",
+    "parent_key": "StudentsDormitory",
+    "path": "/students/dormitory/adjustments",
+    "component": "students/dormitory/index",
+    "sort_no": 3,
+    "meta": {
+      "title": "menus.stuDormAdjustments",
+      "dormitoryView": "adjustments",
+      "icon": "ep/list",
+      "permissions": [
+        "dormitory:list"
+      ]
+    }
+  },
+  {
+    "key": "StuBoardingStay",
+    "title": "周末留宿",
+    "parent_key": "StudentsDormitory",
+    "path": "/students/dormitory/stay",
+    "component": "students/stay/index",
+    "sort_no": 4,
+    "meta": {
+      "title": "menus.homeroomDormitory",
+      "icon": "ri:calendar-check-line",
+      "permissions": [
+        "dormitory:list"
+      ]
+    }
+  },
+  {
+    "key": "StuDormitoryChecks",
+    "title": "查寝记录",
+    "parent_key": "StudentsDormitory",
+    "path": "/students/dormitory/checks",
+    "component": "students/dormitory/checks",
+    "sort_no": 5,
+    "meta": {
+      "title": "menus.stuDormChecks",
+      "icon": "ri:moon-clear-line",
+      "permissions": [
+        "dormitory:list"
+      ]
+    }
+  },
+  {
+    "key": "StuDormitoryAbsences",
+    "title": "缺寝记录",
+    "parent_key": "StudentsDormitory",
+    "path": "/students/dormitory/absences",
+    "component": "students/dormitory/absences",
+    "sort_no": 6,
+    "meta": {
+      "title": "menus.stuDormAbsences",
+      "icon": "ri:user-unfollow-line",
+      "permissions": [
+        "dormitory:list"
+      ]
+    }
+  },
+  {
+    "key": "StuClassTasks",
+    "title": "班务日志",
+    "parent_key": "Students",
+    "path": "/students/tasks",
+    "component": "daily/affairs/index",
+    "sort_no": 5,
+    "meta": {
+      "title": "menus.homeroomTasks",
+      "permissions": [
+        "class_log:list"
+      ],
+      "icon": "ri:book-read-line"
+    }
+  },
+  {
+    "key": "StuSafetyIncidents",
+    "title": "安全事件",
+    "parent_key": "Students",
+    "path": "/students/safety-incidents",
+    "component": "students/safety-incidents/index",
+    "sort_no": 6,
+    "meta": {
+      "title": "menus.stuSafetyIncidents",
+      "permissions": [
+        "safety_incident:list"
+      ],
+      "icon": "ri:alarm-warning-line"
+    }
+  },
+  {
+    "key": "StuAnonymousReport",
+    "title": "匿名上报",
+    "parent_key": "Students",
+    "path": "/students/anonymous-report",
+    "component": "students/anonymous-report/index",
+    "sort_no": 7,
+    "meta": {
+      "title": "menus.stuAnonymousReport",
+      "permissions": [
+        "anonymous_report:list"
+      ],
+      "icon": "ri:chat-private-line"
+    }
+  },
+  {
+    "key": "StuPublicHygiene",
+    "title": "公共区卫生",
+    "parent_key": "Students",
+    "path": "/students/hygiene",
+    "component": "students/hygiene/index",
+    "sort_no": 8,
+    "meta": {
+      "title": "menus.stuHygiene",
+      "permissions": [
+        "hygiene:list"
+      ],
+      "icon": "ri:brush-2-line"
+    }
+  },
+  {
+    "key": "StuDutyEight",
+    "title": "一天八到",
+    "parent_key": "Students",
+    "path": "/students/duty-eight",
+    "component": "students/duty-eight/index",
+    "sort_no": 9,
+    "meta": {
+      "title": "menus.stuDutyEight",
+      "permissions": [
+        "duty_eight:list"
+      ],
+      "icon": "ri:time-line"
+    }
+  },
+  {
+    "key": "StuHolidayHomework",
+    "title": "假期作业",
+    "parent_key": "Students",
+    "path": "/students/holiday-homework",
+    "component": "students/holiday-homework/index",
+    "sort_no": 10,
+    "meta": {
+      "title": "menus.stuHolidayHomework",
+      "permissions": [
+        "holiday_homework:list"
+      ],
+      "icon": "ri:calendar-check-line"
+    }
+  },
+  {
+    "key": "StuPatrolRecords",
+    "title": "巡查记录",
+    "parent_key": "Students",
+    "path": "/students/patrol",
+    "component": "students/patrol/index",
+    "sort_no": 11,
+    "meta": {
+      "title": "menus.stuPatrol",
+      "icon": "ri:walk-line",
+      "permissions": [
+        "student:update"
+      ]
+    }
+  },
+  {
+    "key": "StudentsHomeroomEval",
+    "title": "班主任考核",
+    "parent_key": "Students",
+    "path": "/students/homeroom-eval",
+    "redirect": "/students/homeroom-eval/ledger",
+    "sort_no": 12,
+    "meta": {
+      "title": "menus.stuHomeroomEval",
+      "icon": "ri:award-line",
+      "permissions": [
+        "homeroom_ledger:list",
+        "homeroom_performance:list",
+        "homeroom_salary:list",
+        "homeroom_payroll:list"
+      ]
+    }
+  },
+  {
+    "key": "StuHomeroomEvalLedger",
+    "title": "督察记录",
+    "parent_key": "StudentsHomeroomEval",
+    "path": "/students/homeroom-eval/ledger",
+    "component": "students/homeroom-eval/ledger/index",
+    "sort_no": 1,
+    "meta": {
+      "title": "menus.stuHomeroomEvalLedger",
+      "permissions": [
+        "homeroom_ledger:list"
+      ],
+      "icon": "ep/tickets"
+    }
+  },
+  {
+    "key": "StuHomeroomEvalOverview",
+    "title": "绩效考核",
+    "parent_key": "StudentsHomeroomEval",
+    "path": "/students/homeroom-eval/overview",
+    "component": "students/homeroom-eval/performance/index",
+    "sort_no": 2,
+    "meta": {
+      "title": "menus.stuHomeroomEvalOverview",
+      "permissions": [
+        "homeroom_performance:list"
+      ],
+      "icon": "ep/data-analysis"
+    }
+  },
+  {
+    "key": "StuHomeroomEvalBase",
+    "title": "基本工资核算",
+    "parent_key": "StudentsHomeroomEval",
+    "path": "/students/homeroom-eval/base",
+    "component": "students/homeroom-eval/base/index",
+    "sort_no": 3,
+    "meta": {
+      "title": "menus.stuHomeroomEvalBase",
+      "permissions": [
+        "homeroom_salary:list"
+      ],
+      "icon": "ep/coin"
+    }
+  },
+  {
+    "key": "StuHomeroomEvalPayroll",
+    "title": "班主任工资核算",
+    "parent_key": "StudentsHomeroomEval",
+    "path": "/students/homeroom-eval/payroll",
+    "component": "students/homeroom-eval/payroll/index",
+    "sort_no": 4,
+    "meta": {
+      "title": "menus.stuHomeroomEvalPayroll",
+      "permissions": [
+        "homeroom_payroll:list"
+      ],
+      "icon": "ep/money"
+    }
+  },
+  {
+    "key": "RiskWarning",
+    "title": "风险预警中心",
+    "parent_key": null,
+    "path": "/risk-warning",
+    "redirect": "/risk-warning/center",
+    "sort_no": 4,
+    "meta": {
+      "icon": "ri:alarm-warning-line",
+      "title": "风险预警中心",
+      "rank": 4
+    }
+  },
+  {
+    "key": "RiskWarningCenter",
+    "title": "预警总览",
+    "parent_key": "RiskWarning",
+    "path": "/risk-warning/center",
+    "component": "risk-warning/index",
+    "sort_no": 1,
+    "meta": {
+      "title": "预警总览",
+      "icon": "ri:dashboard-line"
+    }
+  },
+  {
+    "key": "RiskWarningAI",
+    "title": "AI预警",
+    "parent_key": "RiskWarning",
+    "path": "/risk-warning/ai",
+    "component": "risk-warning/index",
+    "sort_no": 2,
+    "meta": {
+      "title": "AI预警",
+      "icon": "ri:brain-line"
+    }
+  },
+  {
+    "key": "RiskWarningSafety",
+    "title": "校园安全预警",
+    "parent_key": "RiskWarning",
+    "path": "/risk-warning/safety",
+    "component": "risk-warning/index",
+    "sort_no": 3,
+    "meta": {
+      "title": "校园安全预警",
+      "icon": "ri:shield-check-line"
+    }
+  },
+  {
+    "key": "RiskWarningRules",
+    "title": "预警规则",
+    "parent_key": "RiskWarning",
+    "path": "/risk-warning/rules",
+    "component": "risk-warning/rules",
+    "sort_no": 4,
+    "meta": {
+      "title": "预警规则",
+      "icon": "ri:list-settings-line"
+    }
+  },
+  {
+    "key": "LogisticsManagement",
+    "title": "后勤管理",
+    "parent_key": null,
+    "path": "/logistics-management",
+    "redirect": "/logistics-management/assets/ledger",
+    "sort_no": 5,
+    "meta": {
+      "icon": "ri:building-2-line",
+      "title": "后勤管理",
+      "rank": 4
+    }
+  },
+  {
+    "key": "AssetManagement",
+    "title": "资产管理",
+    "parent_key": "LogisticsManagement",
+    "path": "/logistics-management/assets",
+    "redirect": "/logistics-management/assets/ledger",
+    "sort_no": 1,
+    "meta": {
+      "icon": "ri:building-4-line",
+      "title": "资产管理",
+      "permissions": [
+        "asset_register:list",
+        "asset_handover:list"
+      ]
+    }
+  },
+  {
+    "key": "AssetManagementLedger",
+    "title": "资产台账",
+    "parent_key": "AssetManagement",
+    "path": "/logistics-management/assets/ledger",
+    "component": "asset-management/index",
+    "sort_no": 1,
+    "meta": {
+      "icon": "ri:archive-drawer-line",
+      "title": "资产台账",
+      "permissions": [
+        "asset_register:list"
+      ],
+      "auths": [
+        "asset_register:list",
+        "asset_register:detail",
+        "asset_register:create",
+        "asset_register:update",
+        "asset_register:adjust",
+        "asset_register:transfer",
+        "asset_register:confirm",
+        "asset_register:void",
+        "asset_location:list",
+        "asset_location:manage"
+      ]
+    }
+  },
+  {
+    "key": "AssetHandovers",
+    "title": "资产交接",
+    "parent_key": "AssetManagement",
+    "path": "/logistics-management/assets/handovers",
+    "component": "asset-management/handover",
+    "sort_no": 2,
+    "meta": {
+      "icon": "ri:swap-2-line",
+      "title": "资产交接",
+      "permissions": [
+        "asset_handover:list"
+      ],
+      "auths": [
+        "asset_handover:list",
+        "asset_handover:create",
+        "asset_handover:manage",
+        "asset_handover:receive"
+      ]
+    }
+  },
+  {
+    "key": "AssetConsumableRequisitions",
+    "title": "耗材领用记录",
+    "parent_key": "AssetManagement",
+    "path": "/logistics-management/assets/requisitions",
+    "component": "logistics-management/consumable-requisitions/index",
+    "sort_no": 3,
+    "meta": {
+      "icon": "ri:file-list-3-line",
+      "title": "耗材领用记录",
+      "permissions": [
+        "inventory_requisition:list"
+      ],
+      "auths": [
+        "inventory_requisition:list",
+        "inventory_requisition:detail",
+        "inventory_requisition:export"
+      ]
+    }
+  },
+  {
+    "key": "StudentExitAssetChecks",
+    "title": "离校资产核查",
+    "parent_key": "LogisticsManagement",
+    "path": "/logistics-management/exit-asset-checks",
+    "component": "logistics-management/exit-asset-checks/index",
+    "sort_no": 2,
+    "meta": {
+      "icon": "ri:user-received-2-line",
+      "title": "离校资产核查",
+      "permissions": [
+        "student:exit:asset_check:view"
+      ],
+      "auths": [
+        "student:exit:asset_check:view",
+        "student:exit:asset_check:inspect"
+      ]
+    }
+  },
+  {
+    "key": "TrainingRoomLogistics",
+    "title": "采购入库与设备",
+    "parent_key": "LogisticsManagement",
+    "path": "/training-room/logistics",
+    "redirect": "/logistics-management/assets/ledger",
+    "sort_no": 3,
+    "meta": {
+      "title": "采购入库与设备",
+      "showLink": false,
+      "activePath": "/logistics-management/assets/ledger"
+    }
+  },
+  {
+    "key": "CanteenProcurementPlan",
+    "title": "菜谱采购计划",
+    "parent_key": "LogisticsManagement",
+    "path": "/logistics-management/canteen-procurement",
+    "component": "logistics/canteen-procurement/index",
+    "sort_no": 4,
+    "meta": {
+      "icon": "ri:restaurant-2-line",
+      "title": "菜谱采购计划",
+      "permissions": [
+        "canteen_plan:list"
+      ],
+      "auths": [
+        "canteen_plan:list",
+        "canteen_plan:create",
+        "canteen_plan:update",
+        "canteen_plan:confirm",
+        "canteen_plan:export",
+        "canteen_plan:import",
+        "canteen_plan:create_inbound",
+        "canteen_recipe:list",
+        "canteen_ingredient:list"
+      ]
+    }
+  },
+  {
+    "key": "CanteenElectronicLedger",
+    "title": "电子台账管理",
+    "parent_key": "LogisticsManagement",
+    "path": "/logistics-management/electronic-ledger",
+    "component": "logistics-management/electronic-ledger/index",
+    "sort_no": 5,
+    "meta": {
+      "icon": "ri:file-list-3-line",
+      "title": "电子台账管理",
+      "permissions": [
+        "canteen_ledger:list"
+      ],
+      "auths": [
+        "canteen_ledger:list",
+        "canteen_ledger:update",
+        "canteen_ledger:export",
+        "inventory_inbound:create",
+        "inventory_inbound:confirm",
+        "inventory_inbound:delete",
+        "inventory_outbound:create",
+        "inventory_outbound:confirm"
+      ]
+    }
+  },
+  {
+    "key": "RepairOrderManagement",
+    "title": "报修处理/工单台账",
+    "parent_key": "LogisticsManagement",
+    "path": "/logistics-management/repair-orders",
+    "component": "logistics-management/repair-orders/index",
+    "sort_no": 6,
+    "meta": {
+      "icon": "ri:tools-line",
+      "title": "报修处理/工单台账",
+      "permissions": [
+        "repair_order:list"
+      ],
+      "auths": [
+        "repair_order:list",
+        "repair_order:detail",
+        "repair_order:handle",
+        "repair_order:export"
+      ]
+    }
+  },
+  {
+    "key": "AssetDisposalManagement",
+    "title": "设备报废处置",
+    "parent_key": "LogisticsManagement",
+    "path": "/logistics-management/asset-disposals",
+    "component": "logistics-management/asset-disposals/index",
+    "sort_no": 7,
+    "meta": {
+      "icon": "ri:delete-bin-6-line",
+      "title": "设备报废处置",
+      "permissions": [
+        "asset_disposal:list"
+      ],
+      "auths": [
+        "asset_disposal:list",
+        "asset_disposal:detail",
+        "asset_disposal:create",
+        "asset_disposal:update",
+        "asset_disposal:complete",
+        "asset_disposal:void"
+      ]
+    }
+  },
+  {
+    "key": "LogisticsPatrolPoints",
+    "title": "巡查地点",
+    "parent_key": "LogisticsManagement",
+    "path": "/logistics/patrol-points",
+    "component": "logistics/patrol/points",
+    "sort_no": 8,
+    "meta": {
+      "icon": "ri:map-pin-2-line",
+      "title": "巡查地点",
+      "permissions": [
+        "patrol_point:list"
+      ],
+      "auths": [
+        "patrol_point:list"
+      ]
+    }
+  },
+  {
+    "key": "LogisticsPatrolRecords",
+    "title": "巡查记录",
+    "parent_key": "LogisticsManagement",
+    "path": "/logistics/patrol-records",
+    "component": "logistics/patrol/records",
+    "sort_no": 9,
+    "meta": {
+      "icon": "ri:walk-line",
+      "title": "巡查记录",
+      "permissions": [
+        "patrol_record:list"
+      ],
+      "auths": [
+        "patrol_record:list"
+      ]
+    }
+  },
+  {
+    "key": "LogisticsWarehouse",
+    "title": "仓库出入库管理",
+    "parent_key": "LogisticsManagement",
+    "path": "/logistics-management/warehouse",
+    "redirect": "/logistics-management/warehouse/ledger",
+    "sort_no": 10,
+    "meta": {
+      "icon": "ri:archive-stack-line",
+      "title": "仓库出入库管理",
+      "permissions": [
+        "inventory_requisition:list",
+        "inventory_stock_alert:list",
+        "inventory_item:list",
+        "inventory_inbound:list",
+        "inventory_transfer:list",
+        "inventory_product:list"
+      ]
+    }
+  },
+  {
+    "key": "LogisticsWarehouseMaterials",
+    "title": "物资档案",
+    "parent_key": "LogisticsWarehouse",
+    "path": "/logistics-management/warehouse/materials",
+    "component": "inventory/goods-management/index",
+    "sort_no": 1,
+    "meta": {
+      "icon": "ri:archive-drawer-line",
+      "title": "物资档案",
+      "permissions": [
+        "inventory_product:list"
+      ]
+    }
+  },
+  {
+    "key": "LogisticsWarehouseInbound",
+    "title": "入库管理",
+    "parent_key": "LogisticsWarehouse",
+    "path": "/logistics-management/warehouse/inbound",
+    "component": "inventory/inbound-list/index",
+    "sort_no": 2,
+    "meta": {
+      "icon": "ri:login-box-line",
+      "title": "入库管理",
+      "permissions": [
+        "inventory_inbound:list"
+      ]
+    }
+  },
+  {
+    "key": "LogisticsWarehouseInboundForm",
+    "title": "入库单",
+    "parent_key": "LogisticsWarehouse",
+    "path": "/logistics-management/warehouse/inbound/form",
+    "component": "inventory/inbound-list/form",
+    "sort_no": 3,
+    "meta": {
+      "title": "入库单",
+      "showLink": false,
+      "activePath": "/logistics-management/warehouse/inbound",
+      "keepAlive": true,
+      "permissions": [
+        "inventory_inbound:create",
+        "inventory_inbound:update",
+        "inventory_inbound:detail"
+      ]
+    }
+  },
+  {
+    "key": "LogisticsWarehouseRequisitionApply",
+    "title": "物资申领",
+    "parent_key": "LogisticsWarehouse",
+    "path": "/logistics-management/warehouse/requisition-apply",
+    "component": "logistics-management/material-requisition/index",
+    "sort_no": 4,
+    "meta": {
+      "icon": "ri:file-add-line",
+      "title": "物资申领",
+      "permissions": [
+        "inventory_requisition:create"
+      ]
+    }
+  },
+  {
+    "key": "LogisticsWarehouseRequisitions",
+    "title": "领用审批与发放",
+    "parent_key": "LogisticsWarehouse",
+    "path": "/logistics-management/warehouse/requisitions",
+    "component": "logistics-management/warehouse-requisitions/index",
+    "sort_no": 5,
+    "meta": {
+      "icon": "ri:task-line",
+      "title": "领用审批与发放",
+      "permissions": [
+        "inventory_requisition:list"
+      ],
+      "auths": [
+        "inventory_requisition:list",
+        "inventory_requisition:detail",
+        "inventory_requisition:approve",
+        "inventory_requisition:issue",
+        "inventory_requisition:export"
+      ]
+    }
+  },
+  {
+    "key": "LogisticsWarehouseTransfer",
+    "title": "仓库调拨",
+    "parent_key": "LogisticsWarehouse",
+    "path": "/logistics-management/warehouse/transfer",
+    "component": "inventory/transfer-list/index",
+    "sort_no": 6,
+    "meta": {
+      "icon": "ri:swap-box-line",
+      "title": "仓库调拨",
+      "permissions": [
+        "inventory_transfer:list"
+      ],
+      "auths": [
+        "inventory_transfer:list",
+        "inventory_transfer:detail",
+        "inventory_transfer:create",
+        "inventory_transfer:update",
+        "inventory_transfer:delete",
+        "inventory_transfer:approve",
+        "inventory_transfer:confirm"
+      ]
+    }
+  },
+  {
+    "key": "LogisticsWarehouseStockAlerts",
+    "title": "低库存补货预警",
+    "parent_key": "LogisticsWarehouse",
+    "path": "/logistics-management/warehouse/stock-alerts",
+    "component": "inventory/stock-alerts/index",
+    "sort_no": 7,
+    "meta": {
+      "icon": "ri:alarm-warning-line",
+      "title": "低库存补货预警",
+      "permissions": [
+        "inventory_stock_alert:list"
+      ]
+    }
+  },
+  {
+    "key": "LogisticsWarehouseLedger",
+    "title": "库存台账",
+    "parent_key": "LogisticsWarehouse",
+    "path": "/logistics-management/warehouse/ledger",
+    "component": "inventory/inventory-query/index",
+    "sort_no": 8,
+    "meta": {
+      "icon": "ri:file-list-3-line",
+      "title": "库存台账",
+      "permissions": [
+        "inventory_item:list"
+      ],
+      "auths": [
+        "inventory_item:list",
+        "inventory_movement:list"
+      ]
+    }
+  },
+  {
+    "key": "LogisticsCanteen",
+    "title": "食堂管理",
+    "parent_key": "LogisticsManagement",
+    "path": "/logistics/canteen",
+    "redirect": "/logistics/canteen/surveys",
+    "sort_no": 11,
+    "meta": {
+      "title": "食堂管理",
+      "icon": "ri:restaurant-2-line"
+    }
+  },
+  {
+    "key": "LogisticsCanteenDishes",
+    "title": "菜品档案",
+    "parent_key": "LogisticsCanteen",
+    "path": "/logistics/canteen/dishes",
+    "component": "logistics/canteen/dishes",
+    "sort_no": 1,
+    "meta": {
+      "title": "菜品档案",
+      "icon": "ri:restaurant-line",
+      "permissions": [
+        "canteen:dish:list"
+      ]
+    }
+  },
+  {
+    "key": "LogisticsCanteenSurveys",
+    "title": "口味调研",
+    "parent_key": "LogisticsCanteen",
+    "path": "/logistics/canteen/surveys",
+    "component": "logistics/canteen/surveys",
+    "sort_no": 2,
+    "meta": {
+      "title": "口味调研",
+      "icon": "ri:survey-line",
+      "permissions": [
+        "canteen:survey:list"
+      ]
+    }
+  },
+  {
+    "key": "LogisticsCanteenSales",
+    "title": "销量管理",
+    "parent_key": "LogisticsCanteen",
+    "path": "/logistics/canteen/sales",
+    "component": "logistics/canteen/sales",
+    "sort_no": 3,
+    "meta": {
+      "title": "销量管理",
+      "icon": "ri:file-excel-2-line",
+      "permissions": [
+        "canteen:sales:list"
+      ],
+      "showLink": false,
+      "activePath": "/logistics/canteen/surveys"
+    }
+  },
+  {
+    "key": "LogisticsCanteenAnalytics",
+    "title": "数据分析",
+    "parent_key": "LogisticsCanteen",
+    "path": "/logistics/canteen/analytics",
+    "component": "logistics/canteen/analytics",
+    "sort_no": 4,
+    "meta": {
+      "title": "数据分析",
+      "icon": "ri:line-chart-line",
+      "permissions": [
+        "canteen:analytics:view"
+      ],
+      "showLink": false,
+      "activePath": "/logistics/canteen/surveys"
+    }
+  },
+  {
+    "key": "LogisticsCanteenFeedback",
+    "title": "意见反馈",
+    "parent_key": "LogisticsCanteen",
+    "path": "/logistics/canteen/feedback",
+    "component": "logistics/canteen/feedback",
+    "sort_no": 5,
+    "meta": {
+      "title": "意见反馈",
+      "icon": "ri:message-3-line",
+      "permissions": [
+        "canteen:analytics:view"
+      ],
+      "showLink": false,
+      "activePath": "/logistics/canteen/surveys"
+    }
+  },
+  {
+    "key": "Finance",
+    "title": "财务监管",
+    "parent_key": null,
+    "path": "/finance",
+    "redirect": "/finance/dashboard",
+    "sort_no": 7,
+    "meta": {
+      "icon": "ep/money",
+      "title": "menus.finRoot",
+      "rank": 7
+    }
+  },
+  {
+    "key": "FinDashboard",
+    "title": "经营看板",
+    "parent_key": "Finance",
+    "path": "/finance/dashboard",
+    "component": "finance/dashboard/index",
+    "sort_no": 1,
+    "meta": {
+      "title": "menus.finDashboard",
+      "icon": "ep/data-board"
+    }
+  },
+  {
+    "key": "EducationFee",
+    "title": "收费",
+    "parent_key": "Finance",
+    "path": "/education/fee",
+    "redirect": "/education/fees",
+    "sort_no": 2,
+    "meta": {
+      "title": "menus.eduFee",
+      "icon": "ep/wallet"
+    }
+  },
+  {
+    "key": "EduFees",
+    "title": "学费单",
+    "parent_key": "EducationFee",
+    "path": "/education/fees",
+    "component": "education/list/index",
+    "sort_no": 1,
+    "meta": {
+      "title": "menus.eduFees",
+      "entity": "fees",
+      "icon": "ep/ticket"
+    }
+  },
+  {
+    "key": "EduFeeStructure",
+    "title": "收费结构",
+    "parent_key": "EducationFee",
+    "path": "/education/fee-structure",
+    "component": "education/list/index",
+    "sort_no": 2,
+    "meta": {
+      "title": "menus.eduFeeStructure",
+      "entity": "feeStructure",
+      "icon": "ep/operation"
+    }
+  },
+  {
+    "key": "EduFeeCategory",
+    "title": "收费类别",
+    "parent_key": "EducationFee",
+    "path": "/education/fee-category",
+    "component": "education/list/index",
+    "sort_no": 3,
+    "meta": {
+      "title": "menus.eduFeeCategory",
+      "entity": "feeCategory",
+      "icon": "ep/price-tag"
+    }
+  },
+  {
+    "key": "EduFeeSchedule",
+    "title": "收费计划",
+    "parent_key": "EducationFee",
+    "path": "/education/fee-schedule",
+    "component": "education/list/index",
+    "sort_no": 4,
+    "meta": {
+      "title": "menus.eduFeeSchedule",
+      "entity": "feeSchedule",
+      "icon": "ep/stopwatch"
+    }
+  },
+  {
+    "key": "EduPaymentRecord",
+    "title": "收款记录",
+    "parent_key": "EducationFee",
+    "path": "/education/payment-record",
+    "component": "education/list/index",
+    "sort_no": 5,
+    "meta": {
+      "title": "menus.eduPaymentRecord",
+      "entity": "paymentRecord",
+      "icon": "ep/coin"
+    }
+  },
+  {
+    "key": "EduRefundRecord",
+    "title": "退费记录",
+    "parent_key": "EducationFee",
+    "path": "/education/refund-record",
+    "component": "education/list/index",
+    "sort_no": 6,
+    "meta": {
+      "title": "menus.eduRefundRecord",
+      "entity": "refundRecord",
+      "icon": "ep/refresh-left"
+    }
+  },
+  {
+    "key": "EduSalesInvoice",
+    "title": "销售发票",
+    "parent_key": "EducationFee",
+    "path": "/education/sales-invoice",
+    "component": "education/list/index",
+    "sort_no": 7,
+    "meta": {
+      "title": "menus.eduSalesInvoice",
+      "entity": "salesInvoice",
+      "icon": "ep/tickets"
+    }
+  },
+  {
+    "key": "EduSalesOrder",
+    "title": "销售订单",
+    "parent_key": "EducationFee",
+    "path": "/education/sales-order",
+    "component": "education/list/index",
+    "sort_no": 8,
+    "meta": {
+      "title": "menus.eduSalesOrder",
+      "entity": "salesOrder",
+      "icon": "ep/shopping-cart"
+    }
+  },
+  {
+    "key": "FinRptFee",
+    "title": "学生收费汇总",
+    "parent_key": "EducationFee",
+    "path": "/finance/reports/student-fee",
+    "component": "education/reports/index",
+    "sort_no": 9,
+    "meta": {
+      "title": "menus.eduRptFee",
+      "report": "student-fee",
+      "icon": "ep/money"
+    }
+  },
+  {
+    "key": "FinRptProgramFee",
+    "title": "专业收费汇总",
+    "parent_key": "EducationFee",
+    "path": "/finance/reports/program-fee",
+    "component": "education/reports/index",
+    "sort_no": 10,
+    "meta": {
+      "title": "menus.eduRptProgramFee",
+      "report": "program-fee",
+      "icon": "ep/wallet"
+    }
+  },
+  {
+    "key": "FinFeeProgress",
+    "title": "收费进度统计",
+    "parent_key": "EducationFee",
+    "path": "/finance/reports/fee-progress",
+    "component": "finance/fee-progress/index",
+    "sort_no": 11,
+    "meta": {
+      "title": "menus.finFeeProgress",
+      "icon": "ep/data-line"
+    }
+  },
+  {
+    "key": "FinSalaryCalc",
+    "title": "教师工资核算",
+    "parent_key": "EducationFee",
+    "path": "/finance/salary-calc",
+    "component": "finance/salary-calc/index",
+    "sort_no": 12,
+    "meta": {
+      "title": "menus.finSalaryCalc",
+      "icon": "ep/coin"
+    }
+  },
+  {
+    "key": "FinanceBudgetLedger",
+    "title": "预算与收支留痕",
+    "parent_key": "Finance",
+    "path": "/finance/budget-ledger",
+    "redirect": "/finance/cost-center",
+    "sort_no": 3,
+    "meta": {
+      "title": "menus.finBudgetLedger",
+      "icon": "ep/data-analysis"
+    }
+  },
+  {
+    "key": "FinCostCenter",
+    "title": "成本中心",
+    "parent_key": "FinanceBudgetLedger",
+    "path": "/finance/cost-center",
+    "component": "education/list/index",
+    "sort_no": 1,
+    "meta": {
+      "title": "menus.finCostCenter",
+      "entity": "costCenter",
+      "icon": "ep/management"
+    }
+  },
+  {
+    "key": "FinBudget",
+    "title": "预算",
+    "parent_key": "FinanceBudgetLedger",
+    "path": "/finance/budget",
+    "component": "education/list/index",
+    "sort_no": 2,
+    "meta": {
+      "title": "menus.finBudget",
+      "entity": "budget",
+      "icon": "ep/pie-chart"
+    }
+  },
+  {
+    "key": "FinJournalEntry",
+    "title": "日记账",
+    "parent_key": "FinanceBudgetLedger",
+    "path": "/finance/journal-entry",
+    "component": "education/list/index",
+    "sort_no": 3,
+    "meta": {
+      "title": "menus.finJournalEntry",
+      "entity": "journalEntry",
+      "icon": "ep/document"
+    }
+  },
+  {
+    "key": "FinPaymentEntry",
+    "title": "收付款",
+    "parent_key": "FinanceBudgetLedger",
+    "path": "/finance/payment-entry",
+    "component": "education/list/index",
+    "sort_no": 4,
+    "meta": {
+      "title": "menus.finPaymentEntry",
+      "entity": "paymentEntry",
+      "icon": "ep/coin"
+    }
+  },
+  {
+    "key": "FinGlEntry",
+    "title": "总账分录",
+    "parent_key": "FinanceBudgetLedger",
+    "path": "/finance/gl-entry",
+    "component": "education/list/index",
+    "sort_no": 5,
+    "meta": {
+      "title": "menus.finGlEntry",
+      "entity": "glEntry",
+      "icon": "ep/list"
+    }
+  },
+  {
+    "key": "FinanceExpense",
+    "title": "报销",
+    "parent_key": "Finance",
+    "path": "/finance/expense",
+    "redirect": "/finance/expense-claim-type",
+    "sort_no": 4,
+    "meta": {
+      "title": "menus.finExpense",
+      "icon": "ep/wallet"
+    }
+  },
+  {
+    "key": "FinExpenseClaimType",
+    "title": "费用类型",
+    "parent_key": "FinanceExpense",
+    "path": "/finance/expense-claim-type",
+    "component": "education/list/index",
+    "sort_no": 1,
+    "meta": {
+      "title": "menus.finExpenseClaimType",
+      "entity": "expenseClaimType",
+      "icon": "ep/price-tag"
+    }
+  },
+  {
+    "key": "FinExpenseClaim",
+    "title": "费用报销",
+    "parent_key": "FinanceExpense",
+    "path": "/finance/expense-claim",
+    "component": "education/list/index",
+    "sort_no": 2,
+    "meta": {
+      "title": "menus.finExpenseClaim",
+      "entity": "expenseClaim",
+      "icon": "ep/ticket"
+    }
+  },
+  {
+    "key": "FinEmployeeAdvance",
+    "title": "员工预支",
+    "parent_key": "FinanceExpense",
+    "path": "/finance/employee-advance",
+    "component": "education/list/index",
+    "sort_no": 3,
+    "meta": {
+      "title": "menus.finEmployeeAdvance",
+      "entity": "employeeAdvance",
+      "icon": "ep/wallet"
+    }
+  },
+  {
+    "key": "FinanceProcurement",
+    "title": "采购",
+    "parent_key": "Finance",
+    "path": "/finance/procurement",
+    "redirect": "/finance/supplier",
+    "sort_no": 5,
+    "meta": {
+      "title": "menus.finProcurement",
+      "icon": "ep/shopping-cart"
+    }
+  },
+  {
+    "key": "FinSupplier",
+    "title": "供应商",
+    "parent_key": "FinanceProcurement",
+    "path": "/finance/supplier",
+    "component": "education/list/index",
+    "sort_no": 1,
+    "meta": {
+      "title": "menus.finSupplier",
+      "entity": "supplier",
+      "icon": "ep/stamp"
+    }
+  },
+  {
+    "key": "FinMaterialRequest",
+    "title": "物料申请",
+    "parent_key": "FinanceProcurement",
+    "path": "/finance/material-request",
+    "component": "education/list/index",
+    "sort_no": 2,
+    "meta": {
+      "title": "menus.finMaterialRequest",
+      "entity": "materialRequest",
+      "icon": "ep/notebook"
+    }
+  },
+  {
+    "key": "FinPurchaseOrder",
+    "title": "采购订单",
+    "parent_key": "FinanceProcurement",
+    "path": "/finance/purchase-order",
+    "component": "education/list/index",
+    "sort_no": 3,
+    "meta": {
+      "title": "menus.finPurchaseOrder",
+      "entity": "purchaseOrder",
+      "icon": "ep/shopping-cart"
+    }
+  },
+  {
+    "key": "FinPurchaseReceipt",
+    "title": "采购入库",
+    "parent_key": "FinanceProcurement",
+    "path": "/finance/purchase-receipt",
+    "component": "education/list/index",
+    "sort_no": 4,
+    "meta": {
+      "title": "menus.finPurchaseReceipt",
+      "entity": "purchaseReceipt",
+      "icon": "ep/checked"
+    }
+  },
+  {
+    "key": "FinPurchaseInvoice",
+    "title": "采购发票",
+    "parent_key": "FinanceProcurement",
+    "path": "/finance/purchase-invoice",
+    "component": "education/list/index",
+    "sort_no": 5,
+    "meta": {
+      "title": "menus.finPurchaseInvoice",
+      "entity": "purchaseInvoice",
+      "icon": "ep/tickets"
+    }
+  },
+  {
+    "key": "FinanceFixedAssets",
+    "title": "固定资产",
+    "parent_key": "Finance",
+    "path": "/finance/fixed-assets",
+    "redirect": "/finance/asset-category",
+    "sort_no": 6,
+    "meta": {
+      "title": "menus.finFixedAssets",
+      "icon": "ep/office-building"
+    }
+  },
+  {
+    "key": "FinAssetCategory",
+    "title": "资产类别",
+    "parent_key": "FinanceFixedAssets",
+    "path": "/finance/asset-category",
+    "component": "education/list/index",
+    "sort_no": 1,
+    "meta": {
+      "title": "menus.finAssetCategory",
+      "entity": "assetCategory",
+      "icon": "ep/collection-tag"
+    }
+  },
+  {
+    "key": "FinLocation",
+    "title": "地点",
+    "parent_key": "FinanceFixedAssets",
+    "path": "/finance/location",
+    "component": "education/list/index",
+    "sort_no": 2,
+    "meta": {
+      "title": "menus.finLocation",
+      "entity": "location",
+      "icon": "ep/office-building"
+    }
+  },
+  {
+    "key": "FinAsset",
+    "title": "资产",
+    "parent_key": "FinanceFixedAssets",
+    "path": "/finance/asset",
+    "component": "education/list/index",
+    "sort_no": 3,
+    "meta": {
+      "title": "menus.finAsset",
+      "entity": "asset",
+      "icon": "ep/coin"
+    }
+  },
+  {
+    "key": "FinAssetMovement",
+    "title": "资产变动",
+    "parent_key": "FinanceFixedAssets",
+    "path": "/finance/asset-movement",
+    "component": "education/list/index",
+    "sort_no": 4,
+    "meta": {
+      "title": "menus.finAssetMovement",
+      "entity": "assetMovement",
+      "icon": "ep/operation"
+    }
+  },
+  {
+    "key": "FinAssetDepreciationSchedule",
+    "title": "固定资产折旧计划",
+    "parent_key": "FinanceFixedAssets",
+    "path": "/finance/asset-depreciation-schedule",
+    "component": "education/list/index",
+    "sort_no": 5,
+    "meta": {
+      "title": "menus.finAssetDepreciationSchedule",
+      "entity": "assetDepreciationSchedule",
+      "icon": "ep/data-line"
+    }
+  },
+  {
+    "key": "FinAssetRepair",
+    "title": "资产维修",
+    "parent_key": "FinanceFixedAssets",
+    "path": "/finance/asset-repair",
+    "component": "education/list/index",
+    "sort_no": 6,
+    "meta": {
+      "title": "menus.finAssetRepair",
+      "entity": "assetRepair",
+      "icon": "ep/tools"
+    }
+  },
+  {
+    "key": "SystemMonitor",
+    "title": "系统监控",
+    "parent_key": null,
+    "path": "/monitor",
+    "redirect": "/monitor/online-user",
+    "sort_no": 9,
+    "meta": {
+      "icon": "ep:monitor",
+      "title": "menus.pureSysMonitor",
+      "rank": 15
+    }
+  },
+  {
+    "key": "OnlineUser",
+    "title": "在线用户",
+    "parent_key": "SystemMonitor",
+    "path": "/monitor/online-user",
+    "component": "monitor/online/index",
+    "sort_no": 1,
+    "meta": {
+      "icon": "ri:user-voice-line",
+      "title": "menus.pureOnlineUser"
+    }
+  },
+  {
+    "key": "LoginLog",
+    "title": "登录日志",
+    "parent_key": "SystemMonitor",
+    "path": "/monitor/login-logs",
+    "component": "monitor/logs/login/index",
+    "sort_no": 2,
+    "meta": {
+      "icon": "ri:window-line",
+      "title": "menus.pureLoginLog"
+    }
+  },
+  {
+    "key": "OperationLog",
+    "title": "操作日志",
+    "parent_key": "SystemMonitor",
+    "path": "/monitor/operation-logs",
+    "component": "monitor/logs/operation/index",
+    "sort_no": 3,
+    "meta": {
+      "icon": "ri:history-fill",
+      "title": "menus.pureOperationLog"
+    }
+  },
+  {
+    "key": "SystemLog",
+    "title": "系统日志",
+    "parent_key": "SystemMonitor",
+    "path": "/monitor/system-logs",
+    "component": "monitor/logs/system/index",
+    "sort_no": 4,
+    "meta": {
+      "icon": "ri:file-search-line",
+      "title": "menus.pureSystemLog"
+    }
+  },
+  {
+    "key": "HeadTeacherSupervision",
+    "title": "班主任监督",
+    "parent_key": null,
+    "path": "/head-teacher-supervision",
+    "redirect": "/head-teacher-supervision/monitor",
+    "sort_no": 9,
+    "meta": {
+      "icon": "ri:video-on-line",
+      "title": "班主任监督",
+      "rank": 6,
+      "permissions": [
+        "head_teacher_supervision:view"
+      ]
+    }
+  },
+  {
+    "key": "HeadTeacherSupervisionMonitor",
+    "title": "监督看板",
+    "parent_key": "HeadTeacherSupervision",
+    "path": "/head-teacher-supervision/monitor",
+    "component": "head-teacher-supervision/index",
+    "sort_no": 1,
+    "meta": {
+      "icon": "ri:dashboard-3-line",
+      "title": "监督看板",
+      "permissions": [
+        "head_teacher_supervision:view"
+      ]
+    }
+  }
+]

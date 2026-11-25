@@ -1,0 +1,135 @@
+<script setup lang="ts">
+import { ref } from "vue";
+import { useRole } from "./hook";
+import { PureTableBar } from "@/components/RePureTableBar";
+import { useRenderIcon } from "@/components/ReIcon/src/hooks";
+
+import Plane from "~icons/ri/plane-line";
+import Refresh from "~icons/ep/refresh";
+
+defineOptions({
+  name: "OnlineUser"
+});
+
+const formRef = ref();
+const {
+  form,
+  loading,
+  columns,
+  dataList,
+  pagination,
+  onSearch,
+  resetForm,
+  handleOffline,
+  handleSizeChange,
+  handleCurrentChange,
+  handleSelectionChange
+} = useRole();
+</script>
+
+<template>
+  <ReListPresentation>
+  <div class="main list-page list-presentation-container">
+    <ReListHeading title="在线用户" />
+    <section class="list-query-panel">
+      <el-form
+        ref="formRef"
+        :inline="true"
+        :model="form"
+        class="search-form bg-bg_color w-full pl-8 pt-3 overflow-auto list-filters"
+      >
+        <el-form-item label="用户名" prop="username">
+          <el-input
+            v-model="form.username"
+            placeholder="请输入用户名"
+            clearable
+            class="w-45!"
+          />
+        </el-form-item>
+        <el-form-item>
+          <el-button
+            data-list-query="search"
+            type="primary"
+            :icon="useRenderIcon('ri:search-line')"
+            :loading="loading"
+            @click="onSearch"
+          >
+            搜索
+          </el-button>
+          <el-button
+            data-list-query="reset"
+            :icon="useRenderIcon(Refresh)"
+            @click="resetForm(formRef)"
+          >
+            重置
+          </el-button>
+        </el-form-item>
+      </el-form>
+
+      <PureTableBar :list-heading="false" title="在线用户" :columns="columns" @refresh="onSearch">
+        <template v-slot="{ size, dynamicColumns }">
+          <ReListTable
+            list-key="index-0"
+            engine="pure"
+            :list-refresh="onSearch"
+            align-whole="center"
+            showOverflowTooltip
+            table-layout="auto"
+            :loading="loading"
+            :size="size"
+            adaptive
+            :adaptiveConfig="{ offsetBottom: 108 }"
+            :data="dataList"
+            :columns="dynamicColumns"
+            :pagination="{ ...pagination, size }"
+            :header-cell-style="{
+              background: 'var(--el-fill-color-light)',
+              color: 'var(--el-text-color-primary)'
+            }"
+            @selection-change="handleSelectionChange"
+            @page-size-change="handleSizeChange"
+            @page-current-change="handleCurrentChange"
+          >
+            <template #operation="{ row }">
+              <el-popconfirm confirm-button-type="warning"
+                :title="`是否强制下线${row.username}`"
+                @confirm="handleOffline(row)"
+              >
+                <template #reference>
+                  <el-button
+                    data-action="warning"
+                    class="reset-margin"
+                    link
+                    type="primary"
+                    :size="size"
+                    :icon="useRenderIcon(Plane)"
+                  >
+                    强退
+                  </el-button>
+                </template>
+              </el-popconfirm>
+            </template>
+          </ReListTable>
+        </template>
+      </PureTableBar>
+    </section>
+  </div>
+
+  </ReListPresentation>
+</template>
+
+<style lang="scss" scoped>
+:deep(.el-dropdown-menu__item i) {
+  margin: 0;
+}
+
+.main-content {
+  margin: 24px 24px 0 !important;
+}
+
+.search-form {
+  :deep(.el-form-item) {
+    margin-bottom: 12px;
+  }
+}
+</style>

@@ -1,0 +1,8 @@
+# MES 加工询价解析/导出依赖；安装到 ERP plugins/core/backend/.venv，不另建业务数据库。
+pdfplumber>=0.11,<1
+pypdfium2>=4.30,<6
+pypdf>=5,<7
+reportlab>=4.3,<5
+Pillow>=10,<12
+# 三维模型几何计算；PDF、核价及导出不要求加载 OCP。
+cadquery-ocp>=8.0.1.1.0,<9

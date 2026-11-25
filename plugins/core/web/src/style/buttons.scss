@@ -1,0 +1,329 @@
+@use "sass:color";
+@use "sass:list";
+
+// Only button tokens change here: tags, alerts, table headers and charts retain their colors.
+$tones: (
+  success: (
+    #4d938b,
+    #326e66,
+  ),
+  edit: (
+    #b57039,
+    #8d542b,
+  ),
+  warning: (
+    #e66f1d,
+    #b65313,
+  ),
+  danger: (
+    #c93827,
+    #c93827,
+  ),
+);
+
+:root {
+  --app-button-primary-ink: var(
+    --app-button-primary-ink-light,
+    var(--el-color-primary)
+  );
+  --app-button-primary-soft: var(--el-color-primary-light-9);
+  --app-button-primary-border: var(--el-color-primary-light-5);
+  --app-button-primary-hover-soft: var(--el-color-primary-light-8);
+  --app-button-primary-solid: var(--el-color-primary);
+  --app-button-primary-hover-solid: var(--el-color-primary);
+  --app-button-primary-active-solid: var(--el-color-primary);
+  --app-button-primary-contrast: #fff;
+  --app-button-primary-hover-contrast: #fff;
+  --app-button-primary-active-contrast: #fff;
+  --app-button-neutral-ink: var(--el-text-color-regular);
+  --app-button-neutral-soft: var(--el-fill-color);
+  --app-button-neutral-border: var(--el-border-color);
+  --app-button-neutral-hover-soft: var(--el-fill-color-dark);
+
+  @each $name, $palette in $tones {
+    $base: list.nth($palette, 1);
+    $ink: list.nth($palette, 2);
+    --app-button-#{$name}-base: #{$base};
+    --app-button-#{$name}-ink: #{$ink};
+    --app-button-#{$name}-soft: #{color.mix($base, #fff, 8%)};
+    --app-button-#{$name}-border: #{color.mix($base, #fff, 38%)};
+    --app-button-#{$name}-hover-soft: #{color.mix($base, #fff, 15%)};
+    --app-button-#{$name}-solid: #{$ink};
+    --app-button-#{$name}-hover-solid: #{color.mix(#000, $ink, 10%)};
+    --app-button-#{$name}-active-solid: #{color.mix(#000, $ink, 18%)};
+    --app-button-#{$name}-contrast: #fff;
+    --app-button-#{$name}-hover-contrast: #fff;
+    --app-button-#{$name}-active-contrast: #fff;
+  }
+}
+
+.dark {
+  --app-button-primary-ink: var(
+    --app-button-primary-ink-dark,
+    var(--el-color-primary)
+  );
+  @each $name, $palette in $tones {
+    $base: list.nth($palette, 1);
+    --app-button-#{$name}-ink: #{color.mix(#fff, $base, 50%)};
+    --app-button-#{$name}-soft: #{color.mix($base, #17191e, 18%)};
+    --app-button-#{$name}-border: #{color.mix($base, #17191e, 48%)};
+    --app-button-#{$name}-hover-soft: #{color.mix($base, #17191e, 30%)};
+  }
+}
+
+@mixin tone($name) {
+  --action-ink: var(--app-button-#{$name}-ink);
+  --action-soft: var(--app-button-#{$name}-soft);
+  --action-border: var(--app-button-#{$name}-border);
+  --action-hover-soft: var(--app-button-#{$name}-hover-soft);
+  --action-solid: var(--app-button-#{$name}-solid);
+  --action-hover-solid: var(--app-button-#{$name}-hover-solid);
+  --action-active-solid: var(--app-button-#{$name}-active-solid);
+  --action-contrast: var(--app-button-#{$name}-contrast);
+  --action-hover-contrast: var(--app-button-#{$name}-hover-contrast);
+  --action-active-contrast: var(--app-button-#{$name}-active-contrast);
+}
+
+@mixin solid {
+  --action-text: var(--action-contrast);
+  --action-bg: var(--action-solid);
+  --action-line: var(--action-solid);
+  --action-hover-text: var(--action-hover-contrast);
+  --action-hover-bg: var(--action-hover-solid);
+  --action-hover-line: var(--action-hover-solid);
+  --action-active-text: var(--action-active-contrast);
+  --action-active-bg: var(--action-active-solid);
+  --action-active-line: var(--action-active-solid);
+}
+
+@mixin soft {
+  --action-text: var(--action-ink);
+  --action-bg: var(--action-soft);
+  --action-line: var(--action-border);
+  --action-hover-text: var(--action-ink);
+  --action-hover-bg: var(--action-hover-soft);
+  --action-hover-line: var(--action-ink);
+  --action-active-text: var(--action-ink);
+  --action-active-bg: var(--action-hover-soft);
+  --action-active-line: var(--action-ink);
+}
+
+// 默认按钮使用中性色，已有语义标记继续适用于列表、表单和弹窗。
+.el-button,
+[data-action] {
+  @include tone(primary);
+  @include soft;
+
+  &:is(
+    [data-action="primary"],
+    [data-list-action="create"],
+    [data-list-query="search"],
+    .el-button--primary
+  ) {
+    @include solid;
+  }
+  &:is(
+    [data-action="success"],
+    [data-action="export"],
+    [data-list-action="export"],
+    .el-button--success,
+    .app-button-success
+  ) {
+    @include tone(success);
+  }
+  &[data-action="success"],
+  &.el-button--success:where(
+      :not([data-action]):not([data-list-action]):not([data-list-query])
+    ) {
+    @include solid;
+  }
+  &:is([data-action="edit"], [data-list-action="edit"]) {
+    @include tone(edit);
+  }
+  &:is([data-action="warning"], .el-button--warning, .app-button-warning) {
+    @include tone(warning);
+  }
+  &:is(
+    [data-action="danger"],
+    [data-list-action="delete"],
+    .el-button--danger,
+    .app-button-danger
+  ) {
+    @include tone(danger);
+  }
+  // Explicit actions take precedence over a page's historical Element Plus type.
+  &[data-list-action="create"]:not([data-action]),
+  &[data-list-query="search"]:not([data-action]),
+  &[data-list-action="import"]:not([data-action]) {
+    @include tone(primary);
+  }
+  &[data-list-action="export"]:not([data-action]) {
+    @include tone(success);
+  }
+  &[data-list-action="edit"]:not([data-action]) {
+    @include tone(edit);
+  }
+  &[data-list-action="delete"]:not([data-action]) {
+    @include tone(danger);
+  }
+  &[data-action="primary"],
+  &[data-action="view"],
+  &[data-action="import"] {
+    @include tone(primary);
+  }
+  &[data-action="success"],
+  &[data-action="export"] {
+    @include tone(success);
+  }
+  &[data-action="edit"] {
+    @include tone(edit);
+  }
+  &[data-action="warning"] {
+    @include tone(warning);
+  }
+  &[data-action="danger"] {
+    @include tone(danger);
+  }
+  &:is(
+    [data-action="view"],
+    [data-action="import"],
+    [data-action="export"],
+    [data-action="edit"],
+    [data-action="warning"],
+    [data-action="danger"]
+  ) {
+    @include soft;
+  }
+  &:is(
+      [data-list-action="import"],
+      [data-list-action="export"],
+      [data-list-action="edit"],
+      [data-list-action="delete"]
+    ):not([data-action]) {
+    @include soft;
+  }
+  &:is(.app-button-danger, .app-button-warning, .app-button-success):where(
+      :not([data-action]):not([data-list-action]):not([data-list-query])
+    ) {
+    @include solid;
+  }
+
+  &.el-button:is(.is-link, .is-text) {
+    @include soft;
+  }
+
+  &.el-button:where(
+      :not(
+        [data-action],
+        [data-list-action],
+        [data-list-query],
+        .el-button--primary,
+        .el-button--success,
+        .el-button--warning,
+        .el-button--danger,
+        .app-button-danger,
+        .app-button-warning,
+        .app-button-success
+      )
+    ),
+  &:is(
+    [data-action="neutral"],
+    [data-list-query="reset"],
+    .app-button-neutral
+  ) {
+    @include tone(neutral);
+    --action-text: var(--action-ink);
+    --action-bg: var(--action-soft);
+    --action-line: var(--action-border);
+    --action-hover-text: var(--action-ink);
+    --action-hover-bg: var(--action-hover-soft);
+    --action-hover-line: var(--el-border-color-darker);
+    --action-active-text: var(--action-ink);
+    --action-active-bg: var(--el-fill-color-darker);
+    --action-active-line: var(--el-border-color-darker);
+  }
+  &.is-plain:not([data-action="neutral"]):not([data-list-query="reset"]) {
+    --action-text: var(--action-ink);
+    --action-bg: var(--action-soft);
+    --action-line: var(--action-border);
+    --action-hover-text: var(--action-ink);
+    --action-hover-bg: var(--action-hover-soft);
+    --action-active-text: var(--action-ink);
+    --action-active-bg: var(--action-hover-soft);
+  }
+  &.el-button:not(.erp-action-button) {
+    color: var(--action-text) !important;
+    background-color: var(--action-bg) !important;
+    background-image: none !important;
+    border-color: var(--action-line) !important;
+    box-shadow: none !important;
+    --el-button-outline-color: var(--action-border);
+    &:hover,
+    &:focus-visible {
+      color: var(--action-hover-text) !important;
+      background-color: var(--action-hover-bg) !important;
+      border-color: var(--action-hover-line) !important;
+    }
+    &:active {
+      color: var(--action-active-text) !important;
+      background-color: var(--action-active-bg) !important;
+      border-color: var(--action-active-line) !important;
+    }
+    &.is-link,
+    &.is-text {
+      border-color: transparent !important;
+    }
+    &.is-link {
+      padding-inline: 4px;
+    }
+    &.is-disabled,
+    &:disabled {
+      color: var(--el-disabled-text-color) !important;
+      background-color: var(--el-disabled-bg-color) !important;
+      border-color: var(--el-disabled-border-color) !important;
+      opacity: 1;
+    }
+  }
+  &.el-link,
+  &.el-dropdown-menu__item,
+  &:is(button, a, span):not(.el-button) {
+    color: var(--action-ink) !important;
+    &:hover,
+    &:focus-visible {
+      background-color: var(--action-soft);
+    }
+    &.is-disabled,
+    &[aria-disabled="true"],
+    &:disabled {
+      color: var(--el-disabled-text-color) !important;
+      background-color: transparent !important;
+    }
+  }
+}
+
+// 普通原生按钮也有默认底色，自带外观的控件仍可使用其组件样式。
+:where(button:not(.el-button)) {
+  background-color: var(--app-button-neutral-soft);
+
+  &:where(:hover:not(:disabled)) {
+    background-color: var(--app-button-neutral-hover-soft);
+  }
+
+  &:where(:disabled) {
+    background-color: var(--el-disabled-bg-color);
+  }
+}
+
+// Older custom row renderers use these classes instead of ElButton.
+.action-text.primary {
+  color: var(--app-button-primary-ink) !important;
+}
+.action-text.success {
+  color: var(--app-button-success-ink) !important;
+}
+.action-text.warning {
+  color: var(--app-button-warning-ink) !important;
+}
+.action-text.danger {
+  color: var(--app-button-danger-ink) !important;
+}

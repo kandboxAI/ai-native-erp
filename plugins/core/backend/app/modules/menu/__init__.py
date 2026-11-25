@@ -1,0 +1,1 @@
+"""System menu management module."""

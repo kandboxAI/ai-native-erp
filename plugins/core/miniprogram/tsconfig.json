@@ -1,0 +1,24 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.json",
+  "compilerOptions": {
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@product-branding": ["../../../product-branding.d.ts"],
+      "vue": ["./node_modules/vue"],
+      "@dcloudio/*": ["./node_modules/@dcloudio/*"],
+      "@plugins/*": ["../../*"],
+      "@/*": ["./src/*"]
+    },
+    "lib": ["ESNext", "DOM"],
+    "types": ["@dcloudio/types"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "../../*/miniprogram/src/**/*.ts",
+    "../../*/miniprogram/src/**/*.vue"
+  ]
+}

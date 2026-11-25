@@ -1,0 +1,32 @@
+{
+  "source_adaptation": "passed",
+  "migration_generated": false,
+  "database_changed": false,
+  "tenant_enabled": false,
+  "checks": {
+    "backend_app_import": "passed",
+    "backend_regressions": {
+      "passed": 10,
+      "database": "mocked/offline"
+    },
+    "model_catalog_and_dictionaries": "passed",
+    "web_typecheck": "passed",
+    "web_build": "passed",
+    "miniprogram_typecheck": "passed",
+    "miniprogram_weixin_build": "passed",
+    "harness_http_snapshot": "passed",
+    "real_database": "not_run",
+    "real_browser_business_flow": "not_run",
+    "ai_table_snapshot": "not_run",
+    "ai_index": "not_run"
+  },
+  "deployment_under_test": [
+    "inv",
+    "mes"
+  ],
+  "dependency_version": "inv>=0.1.2",
+  "warnings": [
+    "微信构建使用未配置 AppID 的隔离工程，未发布或真机测试",
+    "前端构建保留现有 Vite/Sass 工具链警告"
+  ]
+}

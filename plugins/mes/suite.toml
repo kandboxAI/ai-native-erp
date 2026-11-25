@@ -1,0 +1,12 @@
+format_version = 1
+key = "mes"
+name = "MES制造套件"
+version = "0.8.1"
+# Resolve inv and its minimum version from this plugin's requires declaration.
+plugins = ["mes"]
+
+[desktop]
+product_name = "MES智能助手"
+app_id = "org.ai-native-erp.mes"
+artifact_prefix = "mes-erp"
+icon = "desktop/icon.png"

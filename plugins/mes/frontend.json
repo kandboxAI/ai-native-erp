@@ -1,0 +1,30 @@
+{
+  "format_version": 1,
+  "branding": {
+    "title": "MES 制造执行系统",
+    "subtitle": "制造执行管理平台",
+    "english_name": "MANUFACTURING EXECUTION SYSTEM",
+    "mark": "制",
+    "assistant_name": "制造助手",
+    "description": "统一生产业务入口，协同生产执行与质量管理。"
+  },
+  "web_view_roots": [
+    "mes"
+  ],
+  "miniapp_pages": [
+    "pages/production-report/index",
+    "pages/production-report-detail/index",
+    "pages/production-progress/index"
+  ],
+  "miniapp_service_provider": "miniprogram/services.ts",
+  "web_applications": [
+    {
+      "title": "MES 制造",
+      "summary": "生产工单、执行控制与质量追溯",
+      "icon": "ri:settings-3-line",
+      "path": "/mes/dashboard",
+      "rootPath": "/mes",
+      "tone": "blue"
+    }
+  ]
+}

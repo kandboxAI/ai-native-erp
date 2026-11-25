@@ -1,0 +1,27 @@
+source_layout = "contained"
+key = "mes"
+name = "制造执行"
+layer = "L3"
+version = "0.8.1"
+frontend_manifest = "frontend.json"
+requires = ["inv>=0.1.7"]
+module_codes = ["mes"]
+module_names = ["mes"]
+table_prefixes = ["mes_"]
+ai_skill_keys = []
+ai_providers = ["app.modules.mes.ai_catalog:PROVIDER"]
+routers = ["app.modules.mes.api:router"]
+# Mes 仅保留历史菜单归属；catalog 不再创建外层目录，租户同步会退役空目录。
+menu_keys = ["MesSales", "MesQuotations", "MesSalesOrders", "MesQuoting", "MesProduction", "MesReporting", "MesDelivery", "MesExtensions", "Mes", "MesDashboard", "MesWorkOrders", "MesRepairOrders", "MesReworkDetails", "MesProcessTemplates", "MesExecution", "MesProductionReports", "MesManualReporting", "MesReportChanges", "MesShipments", "MesReconciliations", "MesProductProcess", "MesQuality", "MesTraceability", "MesEquipment", "MesScheduling", "MesProductionPeople", "MesResourceCalendars", "MesSchedulePlans", "MesInventory", "MesWarehouse", "MesWarehouseInbound", "MesWarehouseOutbound", "MesWarehouseConsumption", "MesWarehouseMovements", "MesWarehouseStock", "MesWarehouseSettings", "MesArchives", "MesArchiveGoods", "MesArchiveCustomers", "MesArchiveSuppliers", "MesArchivePrices", "MesArchiveStages", "MesArchiveProcesses", "MesArchiveEquipment", "MesArchiveRequirements", "MesExceptions"]
+migration_location = "alembic/versions/plugins/mes"
+miniapp_menu_keys = ["mes_production_report", "mes_operation_progress"]
+
+# 独立新插件使用 core；旧部署升级仍保留原历史迁移链。
+migration_base = "core"
+
+package_files = ["miniprogram/src/api/mesProduction.ts", "web/src/api/mes.ts", "web/src/api/mesScheduleTrial.ts", "web/src/api/mesScheduleResources.ts", "web/src/api/mesSchedulePlans.ts", "web/src/api/mesDelivery.ts", "web/src/api/mesInventory.ts", "web/src/api/mesWarehouses.ts", "web/src/api/mesArchives.ts", "web/src/api/mesQuality.ts", "web/src/api/mesCockpit.ts", "web/src/api/mesExceptions.ts"]
+
+[configuration]
+env_prefix = "MES_"
+template = "config/.env.example"
+secret_keys = ["MES_CNC_AI_API_KEY", "MES_CNC_PADDLEOCR_ACCESS_TOKEN"]

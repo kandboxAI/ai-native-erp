@@ -1,0 +1,20 @@
+source_layout = "contained"
+key = "inv"
+name = "物资与库存"
+layer = "L2"
+version = "0.1.7"
+frontend_manifest = "frontend.json"
+requires = []
+module_codes = ["inventory"]
+module_names = ["inventory", "inventory_requisition", "supplier", "supplier_category", "asset_management", "inventory_pricing", "location"]
+table_prefixes = ["inv_", "md_", "asset_"]
+ai_skill_keys = []
+ai_providers = ["app.modules.inventory.ai_catalog:PROVIDER", "app.modules.inventory_pricing.ai_catalog:PROVIDER"]
+routers = ["app.modules.inventory.router:router", "app.modules.inventory_requisition.api:router", "app.modules.asset_management.api:router", "app.modules.asset_management.handover_api:router", "app.modules.location.api:router"]
+miniapp_menu_keys = ["material_requisition", "inventory_stock_alert", "asset_handover_mine"]
+
+migration_base = "core"
+
+migration_location = "alembic/versions/plugins/inv"
+menu_keys = ["LocationRoot", "Inventory", "InventoryStock", "InventoryStockSettings", "InventoryGoods", "InventoryInbound", "InventoryOutbound", "InventoryTransfer", "InventoryBorrow", "InventoryDamage", "InventoryInboundForm", "InventoryOutboundForm", "AssetManagement", "AssetManagementLedger", "AssetHandovers", "InventoryStockSummary", "InventoryStockBalances", "InventoryStockMovements", "InventoryProducts", "InventoryProductCategories", "InventoryWarehouses", "InventorySuppliers", "InventorySupplierCategories", "InventoryOrderTypes"]
+package_files = ["web/src/api/invLocation.ts", "miniprogram/src/api/invAssetHandover.ts", "miniprogram/src/api/invStock.ts", "miniprogram/src/api/inventoryRequisition.ts", "web/src/api/invGoodsImport.ts", "web/src/api/invGoodsManagement.ts", "web/src/api/invInboundList.ts", "web/src/api/inventoryManagement.ts", "web/src/api/inventoryRequisition.ts", "web/src/api/invAssetManagement.ts", "web/src/api/invAssetHandover.ts"]

@@ -1,0 +1,194 @@
+{
+  "pages": [
+    {
+      "path": "pages/login/index",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/qr-login/index",
+      "style": {
+        "navigationBarTitleText": "微信扫码登录"
+      }
+    },
+    {
+      "path": "pages/home/index",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/workspace/index",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/xiaohang/index",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/messages/index",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/profile/index",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/todo/index",
+      "style": {
+        "navigationBarTitleText": "统一待办"
+      }
+    },
+    {
+      "path": "pages/todo-detail/index",
+      "style": {
+        "navigationBarTitleText": "待办详情"
+      }
+    },
+    {
+      "path": "pages/todo-handle/index",
+      "style": {
+        "navigationBarTitleText": "办理待办"
+      }
+    },
+    {
+      "path": "pages/request-detail/index",
+      "style": {
+        "navigationBarTitleText": "申请详情"
+      }
+    },
+    {
+      "path": "pages/approvals/index",
+      "style": {
+        "navigationBarTitleText": "原审批入口（兼容）"
+      }
+    },
+    {
+      "path": "pages/announcements/index",
+      "style": {
+        "navigationBarTitleText": "公告"
+      }
+    },
+    {
+      "path": "pages/notifications/index",
+      "style": {
+        "navigationBarTitleText": "消息"
+      }
+    },
+    {
+      "path": "pages/notice-detail/index",
+      "style": {
+        "navigationBarTitleText": "通知详情"
+      }
+    },
+    {
+      "path": "pages/material/index"
+    },
+    {
+      "path": "pages/material-form/index"
+    },
+    {
+      "path": "pages/material-detail/index"
+    },
+    {
+      "path": "pages/material-stock/index"
+    },
+    {
+      "path": "pages/material-config/index"
+    },
+    {
+      "path": "pages/inventory-alerts/index",
+      "style": {
+        "navigationBarTitleText": "低库存补货预警",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/inventory-alert-detail/index",
+      "style": {
+        "navigationBarTitleText": "库存预警详情",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/asset-handovers/index",
+      "style": {
+        "navigationBarTitleText": "我的资产交接",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/production-report/index",
+      "style": {
+        "navigationBarTitleText": "扫码报工"
+      }
+    },
+    {
+      "path": "pages/production-report-detail/index",
+      "style": {
+        "navigationBarTitleText": "生产任务报工"
+      }
+    },
+    {
+      "path": "pages/production-progress/index",
+      "style": {
+        "navigationBarTitleText": "加工进度",
+        "enablePullDownRefresh": true
+      }
+    }
+  ],
+  "tabBar": {
+    "color": "#8a94a6",
+    "selectedColor": "#1769e0",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "常用",
+        "iconPath": "static/tabbar/favorites.png",
+        "selectedIconPath": "static/tabbar/favorites-active.png"
+      },
+      {
+        "pagePath": "pages/messages/index",
+        "text": "待办",
+        "iconPath": "static/tabbar/tasks.png",
+        "selectedIconPath": "static/tabbar/tasks-active.png"
+      },
+      {
+        "pagePath": "pages/xiaohang/index",
+        "text": "业务助手",
+        "iconPath": "static/tabbar/xiaohang.png",
+        "selectedIconPath": "static/tabbar/xiaohang-active.png"
+      },
+      {
+        "pagePath": "pages/workspace/index",
+        "text": "应用",
+        "iconPath": "static/tabbar/applications.png",
+        "selectedIconPath": "static/tabbar/applications-active.png"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的",
+        "iconPath": "static/tabbar/account.png",
+        "selectedIconPath": "static/tabbar/account-active.png"
+      }
+    ]
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "综合管理系统",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#f4f7fb",
+    "backgroundTextStyle": "dark"
+  }
+}

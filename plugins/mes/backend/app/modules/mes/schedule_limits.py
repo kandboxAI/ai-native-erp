@@ -1,0 +1,8 @@
+"""MES 同步排程的计算预算；超限明确拒绝，不裁剪工单、数量或候选资源。"""
+
+MAX_STAGES = 20_000
+MAX_RESOURCE_WINDOW_COMBINATIONS = 2_000_000
+DEFAULT_SOLVE_SECONDS = 60
+MAX_SOLVE_SECONDS = 60
+# 子进程启动、建模和结果序列化独立于 CP-SAT 的求解预算。
+MODEL_OVERHEAD_SECONDS = 30

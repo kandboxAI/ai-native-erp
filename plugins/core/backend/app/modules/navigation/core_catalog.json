@@ -1,0 +1,135 @@
+[
+  {
+    "key": "SystemMonitor",
+    "name": "系统监控",
+    "menu_type_code": "directory",
+    "parent_key": null,
+    "path": "/monitor",
+    "component": null,
+    "icon": "ri:computer-line",
+    "permission_key": null,
+    "sort_no": 15,
+    "is_visible": true,
+    "is_external": false,
+    "external_url": null,
+    "open_target_code": "self",
+    "flex_form": {
+      "route": {
+        "meta": {
+          "icon": "ri:computer-line",
+          "title": "menus.pureSysMonitor",
+          "rank": 15
+        },
+        "redirect": "/monitor/online-user"
+      }
+    },
+    "previous_parent_keys": [],
+    "previous_icons": [
+      "ep:monitor",
+      "ep/monitor"
+    ]
+  },
+  {
+    "key": "OnlineUser",
+    "name": "在线用户",
+    "menu_type_code": "menu",
+    "parent_key": "SystemMonitor",
+    "path": "/monitor/online-user",
+    "component": "monitor/online/index",
+    "icon": "ri:user-voice-line",
+    "permission_key": "online_user:list",
+    "sort_no": 1,
+    "is_visible": true,
+    "is_external": false,
+    "external_url": null,
+    "open_target_code": "self",
+    "flex_form": {
+      "route": {
+        "meta": {
+          "icon": "ri:user-voice-line",
+          "title": "menus.pureOnlineUser"
+        }
+      }
+    },
+    "previous_parent_keys": [],
+    "previous_icons": []
+  },
+  {
+    "key": "LoginLog",
+    "name": "登录日志",
+    "menu_type_code": "menu",
+    "parent_key": "SystemMonitor",
+    "path": "/monitor/login-logs",
+    "component": "monitor/logs/login/index",
+    "icon": "ri:window-line",
+    "permission_key": "login_log:list",
+    "sort_no": 2,
+    "is_visible": true,
+    "is_external": false,
+    "external_url": null,
+    "open_target_code": "self",
+    "flex_form": {
+      "route": {
+        "meta": {
+          "icon": "ri:window-line",
+          "title": "menus.pureLoginLog"
+        }
+      }
+    },
+    "previous_parent_keys": [],
+    "previous_icons": []
+  },
+  {
+    "key": "OperationLog",
+    "name": "操作日志",
+    "menu_type_code": "menu",
+    "parent_key": "SystemMonitor",
+    "path": "/monitor/operation-logs",
+    "component": "monitor/logs/operation/index",
+    "icon": "ri:history-line",
+    "permission_key": "operation_log:list",
+    "sort_no": 3,
+    "is_visible": true,
+    "is_external": false,
+    "external_url": null,
+    "open_target_code": "self",
+    "flex_form": {
+      "route": {
+        "meta": {
+          "icon": "ri:history-line",
+          "title": "menus.pureOperationLog"
+        }
+      }
+    },
+    "previous_parent_keys": [],
+    "previous_icons": [
+      "ri:history-fill",
+      "ri/history-fill"
+    ]
+  },
+  {
+    "key": "SystemLog",
+    "name": "系统日志",
+    "menu_type_code": "menu",
+    "parent_key": "SystemMonitor",
+    "path": "/monitor/system-logs",
+    "component": "monitor/logs/system/index",
+    "icon": "ri:file-search-line",
+    "permission_key": null,
+    "sort_no": 4,
+    "is_visible": true,
+    "is_external": false,
+    "external_url": null,
+    "open_target_code": "self",
+    "flex_form": {
+      "route": {
+        "meta": {
+          "icon": "ri:file-search-line",
+          "title": "menus.pureSystemLog"
+        }
+      }
+    },
+    "previous_parent_keys": [],
+    "previous_icons": []
+  }
+]

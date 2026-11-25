@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "resources": {
+    "mes_work_order": {
+      "label": "生产工单",
+      "aliases": ["制造工单", "生产订单", "工单交期", "生产进度"],
+      "domain": "mes",
+      "description": "生产工单的计划与累计产量。数量单位见 unit_code，不同单位不能直接相加。",
+      "grain": "一条记录是一张生产工单；累计产量不能与工序累计或报工明细重复相加。",
+      "field_aliases": {"work_order_no": ["工单号"], "due_at": ["交期"], "planned_quantity": ["计划产量"]}
+    },
+    "mes_work_order_operation": {
+      "label": "生产工序任务",
+      "aliases": ["生产任务", "工序任务", "执行进度", "派工任务"],
+      "domain": "mes",
+      "description": "工单内每道工序的任务和累计产量；工序数量不是整张工单的最终产量。",
+      "grain": "一条记录是一张工单的一道工序。多个工序可能重复加工同一批产品，不能相加作为成品产量。",
+      "field_aliases": {"operation_no": ["工序编号"], "sequence_no": ["工序顺序"]}
+    },
+    "mes_production_report": {
+      "label": "现场生产报工",
+      "aliases": ["现场报工", "报工记录", "合格数量", "报废数量", "人工工时"],
+      "domain": "mes",
+      "description": "一次报工的数量与工时事实，统计时确认 status_code。labor_minutes、machine_minutes 的单位为分钟。产品单位须通过工单确认，禁止跨产品单位直接汇总数量。",
+      "grain": "一条记录是一次现场报工；报工次数不是工单数或人员数，报工明细不能与工单或工序累计重复相加。",
+      "field_aliases": {"report_no": ["报工单号"], "reported_at": ["报工时间"], "labor_minutes": ["人工工时分钟"]}
+    }
+  },
+  "metrics": {}
+}

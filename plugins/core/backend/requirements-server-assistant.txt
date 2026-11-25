@@ -1,0 +1,6 @@
+# 服务端 DSH 智能体的可选依赖；先安装 requirements.txt。
+# 推荐执行：python scripts/install_server_assistant_sdk.py
+# 脚本从 backend/.env 读取 SERVER_ASSISTANT_DSH_ROOT 并展开下面的路径。
+# 使用 --no-deps，避免 SDK 拉取默认的 runtime-bin；运行时由配置的 DSH 仓库提供。
+# SDK 所需的 Pydantic 在 requirements.txt 中声明，正常安装其传递依赖。
+-e ${SERVER_ASSISTANT_DSH_ROOT}/python/sdk

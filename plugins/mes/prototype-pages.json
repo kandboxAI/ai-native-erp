@@ -1,0 +1,12 @@
+{
+  "description": "六个明确标注规划状态的 MES 领域入口，复用一个说明组件，不代表后端业务已实现。",
+  "component": "web/src/views/mes/capability/index.vue",
+  "domains": [
+    "product_process",
+    "quality",
+    "traceability",
+    "equipment",
+    "scheduling",
+    "inventory"
+  ]
+}

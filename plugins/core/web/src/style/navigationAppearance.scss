@@ -1,0 +1,41 @@
+// Scoped to navigation so a dark sidebar does not turn white page headers into white text.
+html[data-sidebar-custom] body[layout] {
+  .sidebar-container,
+  .el-menu--vertical {
+    --pure-theme-menu-bg: var(--app-sidebar-bg);
+    --pure-theme-sub-menu-bg: var(--app-sidebar-bg);
+    --pure-theme-sidebar-logo: var(--app-sidebar-bg);
+    --pure-theme-menu-text: var(--app-sidebar-ink);
+    --pure-theme-sub-menu-active-text: var(--app-sidebar-ink);
+    --pure-theme-menu-title-hover: var(--app-sidebar-ink);
+    --pure-theme-menu-hover: var(--app-sidebar-hover);
+    --pure-theme-menu-active-before: var(--app-sidebar-active-bg);
+  }
+
+  .sidebar-container,
+  .sidebar-container .sidebar-logo-container,
+  .el-menu--vertical .el-menu--popup {
+    background: var(--app-sidebar-bg) !important;
+  }
+
+  .sidebar-container .left-collapse svg {
+    color: var(--app-sidebar-ink);
+  }
+
+  :is(.sidebar-container, .el-menu--vertical) {
+    .el-menu-item.is-active.nest-menu,
+    .el-menu-item.is-active.nest-menu > * {
+      color: var(--app-sidebar-active-ink) !important;
+    }
+    .el-menu-item.is-active.nest-menu::before {
+      background: var(--app-sidebar-active-bg) !important;
+    }
+  }
+}
+
+html[data-theme="custom"] body[layout] {
+  :is(.sidebar-container, .el-menu--vertical)
+    .el-menu-item.is-active.nest-menu::before {
+    background: var(--app-navigation-active-bg) !important;
+  }
+}

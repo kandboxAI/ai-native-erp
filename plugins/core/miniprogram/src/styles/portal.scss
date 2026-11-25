@@ -1,0 +1,19 @@
+// Shared portal surface; business pages keep their own layout.
+.page-shell.portal-page {
+  --hq-bg: #f6f7f9;
+  --hq-ink: #202a3b;
+  --hq-muted: #7b8595;
+  --hq-line: #edf0f4;
+  padding: 0 28rpx calc(32rpx + env(safe-area-inset-bottom));
+  background: var(--hq-bg);
+}
+.portal-navbar {
+  margin: 0 -28rpx;
+  padding-bottom: 28rpx;
+  background: var(--hq-bg);
+}
+.portal-page .card {
+  border: 0;
+  border-radius: 28rpx;
+  box-shadow: 0 8rpx 28rpx rgba(29, 46, 75, 0.035);
+}

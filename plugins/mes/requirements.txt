@@ -1,0 +1,3 @@
+# MES 后端依赖。先安装 plugins/core/backend/requirements.txt，再装到同一个虚拟环境。
+-r docs/scheduling-requirements.txt
+-r docs/cnc-requirements.txt
