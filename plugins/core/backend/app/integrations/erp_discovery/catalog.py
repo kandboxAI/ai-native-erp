@@ -66,7 +66,7 @@ def compile_catalog() -> list[dict[str, Any]]:
                     "description": description, "aliases": aliases, "domain": spec.domain, "plugin_key": spec.plugin_key,
                     "grain": safe_text(extra.grain) if extra else "", "fields": fields, "relations": relations,
                     "capabilities": ["filter", "order", "paginate", "aggregate", "group_by"] + (["join"] if relations else []),
-                    "execution": {"tool": "education_erp_query", "operation": "query", "resource": name,
+                    "execution": {"tool": "erp_query", "operation": "query", "resource": name,
                                   "plan_operation": "plan", "plan_version": 1, "max_joins": max_joins,
                                   "aggregate_grain": "root_records_per_group"},
                     "permissions_any": [spec.permission], "dependencies": []}
@@ -76,7 +76,7 @@ def compile_catalog() -> list[dict[str, Any]]:
                       "description": "获取当前账号可以导航的菜单名称和路径", "aliases": ["跳转", "打开页面"],
                       "domain": "system", "fields": [], "relations": [], "capabilities": ["read"],
                       "permissions_any": [], "dependencies": [],
-                      "execution": {"tool": "education_erp_api", "method": "GET", "path": "/api/auth/menus"}})
+                      "execution": {"tool": "erp_api", "method": "GET", "path": "/api/auth/menus"}})
     for path, contract in KNOWLEDGE_CONTRACTS.items():
         if not is_module_enabled("knowledge") or not special_route_enabled("POST", path):
             continue
@@ -90,7 +90,7 @@ def compile_catalog() -> list[dict[str, Any]]:
                           "domain": "knowledge", "plugin_key": route_plugin_owner("POST", path),
                           "fields": [], "relations": [], "capabilities": ["read"],
                           "permissions_any": list(READ_ROUTES[("POST", path)][1]) if isinstance(READ_ROUTES[("POST", path)][1], tuple) else [READ_ROUTES[("POST", path)][1]], "dependencies": [],
-                          "execution": {"tool": "education_erp_api", "method": "POST", "path": path},
+                          "execution": {"tool": "erp_api", "method": "POST", "path": path},
                           "parameters": {"body": contract}})
     for (method, path), permissions in sorted(WRITE_ROUTES.items()):
         if not special_route_enabled(method, path):
@@ -99,7 +99,7 @@ def compile_catalog() -> list[dict[str, Any]]:
                           "description": "业务写入操作；只在用户明确要求对应修改时使用，不返回业务响应正文",
                           "aliases": [], "domain": route_plugin_owner(method, path) or "system", "plugin_key": route_plugin_owner(method, path), "fields": [], "relations": [],
                           "capabilities": ["write"], "permissions_any": list(permissions), "dependencies": [],
-                          "execution": {"tool": "education_erp_api", "method": method, "path": path},
+                          "execution": {"tool": "erp_api", "method": method, "path": path},
                           "parameter_contract": "使用 ERP 业务文档中已定义的参数；未知参数不得猜测"})
     # Retrieval reads generated static contracts, not a fresh OpenAPI inventory.
     # Each contract is intersected with live permission and output policy first.
@@ -121,7 +121,7 @@ def compile_catalog() -> list[dict[str, Any]]:
                           "relations": [], "capabilities": [operation["mode"]],
                           "permissions_any": [], "dependencies": [resource] if resource else [],
                           "recipe": {"http_permissions": operation["permissions"]},
-                          "execution": {"tool": "education_erp_api", "method": operation["method"], "path": operation["path"]},
+                          "execution": {"tool": "erp_api", "method": operation["method"], "path": operation["path"]},
                           "parameters": operation["parameters"], "response_resource": resource})
     for name, metric in sorted(semantics.metrics.items()):
         if metric.resource not in RESOURCES:
@@ -140,7 +140,7 @@ def compile_catalog() -> list[dict[str, Any]]:
                           "fields": [], "relations": [], "capabilities": ["metric"], "unit": safe_text(metric.unit),
                           "dimensions": metric.dimensions, "recipe": query.model_dump(),
                           "permissions_any": [spec.permission], "dependencies": ["resource:" + metric.resource],
-                          "execution": {"tool": "education_erp_discover", "action": "metric", "metric_id": "metric:" + name}})
+                          "execution": {"tool": "erp_discover", "action": "metric", "metric_id": "metric:" + name}})
     for document in documents:
         if document["kind"] == "metric":
             document["plugin_key"] = RESOURCES[document["recipe"]["resource"]].plugin_key

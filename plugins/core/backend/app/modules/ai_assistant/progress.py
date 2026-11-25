@@ -10,15 +10,15 @@ from .schemas import AssistantProgress, AssistantRun
 # 默认 Uvicorn 入口只为自身配置输出，沿用其日志链，保证阶段 INFO 实际可见。
 logger = logging.getLogger("uvicorn.error.ai_assistant")
 TOOL_LABELS = {
-    "education_erp_discover": "查找业务入口", "education_erp_api": "查询业务信息",
-    "education_erp_query": "查询业务信息", "erp_knowledge_search": "查找相关知识",
+    "erp_discover": "查找业务入口", "erp_api": "查询业务信息",
+    "erp_query": "查询业务信息", "erp_knowledge_search": "查找相关知识",
     "erp_knowledge_read_document": "查找相关知识", "web_search": "联网搜索", "web_fetch": "读取网页",
 }
 # 按用户理解的阶段归并工具；联网搜索、网页读取单独展示。
 TOOL_GROUPS = {
     "erp_knowledge_search": ("erp_knowledge_search", "erp_knowledge_read_document"),
-    "education_erp_discover": ("education_erp_discover",),
-    "education_erp_api": ("education_erp_api", "education_erp_query"),
+    "erp_discover": ("erp_discover",),
+    "erp_api": ("erp_api", "erp_query"),
     "web_search": ("web_search",),
     "web_fetch": ("web_fetch",),
 }

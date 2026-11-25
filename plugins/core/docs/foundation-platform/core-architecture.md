@@ -27,7 +27,7 @@
 
 数据库规范以 [数据库命名与建模规范](database-naming-convention.md) 为准。AI 工具权限、租户启停、数据范围、原业务接口字段控制及写操作确认由 ERP 执行。公共隐私扫描、脱敏和结构化查询的额外字段白名单已取消，已登记查询资源使用实际模型字段；详见[模型出口说明](../harness-sync.md)。元数据和索引使用独立 CLI，不随服务启动或迁移自动构建。
 
-受控工具沿用 `education_erp_*` 标识；模型网关使用 `x-erp-client-id`，桌面桥使用 `window.erpDesktop`，均不隐式加载教育业务。行业数据由插件的受控资源提供器发布；不支持任意 SQL。
+通用受控工具使用 `erp_api`、`erp_discover`、`erp_query` 和 `erp_open_page`。模型网关使用 `x-erp-client-id`，桌面桥使用 `window.erpDesktop`。行业数据由插件的受控资源提供器发布，结构化查询使用已登记资源。
 
 ## 交付边界
 

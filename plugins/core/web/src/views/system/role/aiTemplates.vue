@@ -133,7 +133,7 @@ onMounted(load);
             show-word-limit
         /></el-form-item>
         <p class="hint">
-          具体班级、课程与任职信息会自动附加，模板只需填写该角色的工作要求。
+          系统会附加可用的岗位和职责信息，模板只需填写该角色的工作要求。
         </p>
         <el-switch v-model="editing.is_active" active-text="启用" />
       </el-form>

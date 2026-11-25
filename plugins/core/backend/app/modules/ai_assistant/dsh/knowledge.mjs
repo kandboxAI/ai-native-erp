@@ -2,7 +2,7 @@ export const name = "erp-server-knowledge";
 export const inject = ["agents", "tools"];
 
 export const READ_TOOLS = [
-  "education_erp_discover", "education_erp_api", "education_erp_query",
+  "erp_discover", "erp_api", "erp_query",
   "erp_knowledge_search", "erp_knowledge_read_document",
   "web_search", "web_fetch",
 ];

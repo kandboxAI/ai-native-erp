@@ -15,6 +15,25 @@ runInNewContext(ts.transpileModule(
 const menu = (key, extra = {}) => ({ id: key, menu_key: key, menu_name: key,
   menu_type_code: "menu", path: `/${key}`, component: "system/users/index", ...extra });
 
+test("路由配置缺省时使用 hash，显式配置保留模式和基路径", () => {
+  const source = readFileSync(new URL("../src/router/utils.ts", import.meta.url), "utf8");
+  const tree = ts.createSourceFile("utils.ts", source, ts.ScriptTarget.Latest, true);
+  const declaration = tree.statements.find(node => ts.isFunctionDeclaration(node) &&
+    node.name?.text === "getHistoryMode");
+  assert.ok(declaration);
+  const context = {
+    createWebHistory: base => ({ mode: "h5", base }),
+    createWebHashHistory: base => ({ mode: "hash", base })
+  };
+  runInNewContext(ts.transpileModule(declaration.getText(tree), {}).outputText, context);
+  for (const value of [undefined, ""]) {
+    assert.deepEqual(context.getHistoryMode(value), { mode: "hash", base: "" });
+  }
+  assert.deepEqual(context.getHistoryMode("hash,/erp/"), { mode: "hash", base: "/erp/" });
+  assert.deepEqual(context.getHistoryMode("h5"), { mode: "h5", base: "" });
+  assert.deepEqual(context.getHistoryMode("h5,/erp/"), { mode: "h5", base: "/erp/" });
+});
+
 test("仅为后端授权树注册活动页面，隐藏页面保留直接访问入口", () => {
   const rows = exports.buildAsyncRoutes([menu("users"), menu("hidden", { is_visible: false }),
     menu("disabled", { is_active: false })]);

@@ -243,7 +243,7 @@ function deleteDynamicTag(obj: any, current: any, tag?: string) {
       useMultiTagsStoreHook().handleTags(
         "equal",
         [
-          VITE_HIDE_HOME === "false" ? fixedTags : toRaw(getTopMenu()),
+          VITE_HIDE_HOME !== "true" ? fixedTags : toRaw(getTopMenu()),
           obj
         ].flat()
       );

@@ -2,7 +2,7 @@ import type { FunctionalComponent } from "vue";
 const { VITE_HIDE_HOME } = import.meta.env;
 
 export const routerArrays: Array<RouteConfigs> =
-  VITE_HIDE_HOME === "false"
+  VITE_HIDE_HOME !== "true"
     ? [
         {
           path: "/welcome",
