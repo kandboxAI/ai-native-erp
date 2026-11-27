@@ -236,3 +236,7 @@ macOS 本地无签名包、正式签名和独立 DSH 打包的区别，见[完�
 | AI 网关返回 503 | 检查实际后端的模型密钥及配置，重启后端；不把密钥写入前端或安装包 |
 
 小程序是独立构建目标，在 `plugins/core/miniprogram/` 安装依赖后使用 `pnpm dev:h5` / `pnpm build:mp-weixin`；发布前自行配置 AppID、API 域名和平台合法域名。底座导出及插件交付见[开源发布](plugins/core/docs/open-source-release.md)，架构入口见[设计文档索引](plugins/core/docs/foundation-platform/README.md)。
+
+## 快盒业务插件
+
+仓库另提供可选的 [快盒插件](plugins/sample_app/README.md)，覆盖员工、工资社保、项目资金和员工自助报销。按插件 README 选择部署、审核数据库差异并开通租户。插件目录为 `plugins/sample_app/`，标识 `sample_app`，采用 MIT 许可证。

@@ -111,6 +111,42 @@ async def set_password(
     return user
 
 
+async def change_own_password(
+    session: AsyncSession,
+    auth_user_id: UUID,
+    current_password: str,
+    new_password: str,
+    *,
+    min_length: int = 8,
+    history_count: int = 3,
+) -> AuthUser:
+    """本人改密：校验当前密码，拒绝过短或与最近历史相同的新密码；成功后由调用方吊销其余会话。"""
+    if len(new_password) < min_length:
+        raise AppException(f"新密码至少 {min_length} 位", status_code=status.HTTP_422_UNPROCESSABLE_ENTITY)
+    if len(new_password) > 128:
+        raise AppException("新密码过长", status_code=status.HTTP_422_UNPROCESSABLE_ENTITY)
+    if current_password == new_password:
+        raise AppException("新密码不能与当前密码相同", status_code=status.HTTP_422_UNPROCESSABLE_ENTITY)
+    user = await session.get(AuthUser, auth_user_id)
+    if user is None or not user.is_active or not user.password_hash:
+        raise AppException("登录账号不可用", status_code=status.HTTP_404_NOT_FOUND)
+    if not verify_password(current_password, user.password_hash):
+        raise AppException("当前密码不正确", status_code=status.HTTP_400_BAD_REQUEST)
+    if history_count > 0:
+        history = list((await session.execute(
+            select(AuthPasswordHistory)
+            .where(AuthPasswordHistory.auth_user_id == auth_user_id)
+            .order_by(AuthPasswordHistory.created_at.desc())
+            .limit(history_count)
+        )).scalars().all())
+        for row in history:
+            if verify_password(new_password, row.password_hash):
+                raise AppException(f"新密码不能与最近 {history_count} 次使用过的密码相同",
+                                   status_code=status.HTTP_422_UNPROCESSABLE_ENTITY)
+    return await set_password(session, auth_user_id, new_password, updated_by=auth_user_id,
+                              is_password_change_required=False)
+
+
 async def get_user_email(session: AsyncSession, auth_user_id: UUID) -> str | None:
     email = (await session.execute(select(AuthUser.email).where(AuthUser.id == auth_user_id).limit(1))).scalar_one_or_none()
     return str(email).strip() if email else None

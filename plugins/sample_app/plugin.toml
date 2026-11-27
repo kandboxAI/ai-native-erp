@@ -1,0 +1,23 @@
+source_layout = "contained"
+key = "sample_app"
+name = "快盒"
+layer = "L3"
+version = "0.1.2"
+requires = []
+module_codes = ["sample_app"]
+module_names = ["sample_app"]
+table_prefixes = ["sample_app_"]
+routers = ["app.modules.sample_app.api:router"]
+menu_keys = ["SampleAppRoot", "SampleAppHome", "SampleAppEmployee", "SampleAppOutsourced", "SampleAppAttendance", "SampleAppSalary", "SampleAppPayroll", "SampleAppSetting", "SampleAppProject", "SampleAppCash", "SampleAppFunds", "SampleAppCashAccounts", "SampleAppCashBalances", "SampleAppCashDebts", "SampleAppCashClaims", "SampleAppCashCosts", "SampleAppSource", "SampleAppSocialBasis", "SampleAppSocialBills", "SampleAppSocial", "SampleAppWages"]
+miniapp_menu_keys = ["sample_app_entry"]
+frontend_manifest = "frontend.json"
+migration_base = "core"
+migration_location = "alembic/versions/plugins/sample_app"
+ai_providers = []
+ai_skill_keys = []
+package_files = ["web/src/api/sample_app.ts", "web/src/api/sample_appContext.ts"]
+
+[configuration]
+env_prefix = "SAMPLE_APP_"
+template = "config/.env.example"
+secret_keys = []
