@@ -144,6 +144,12 @@
         "navigationBarTitleText": "加工进度",
         "enablePullDownRefresh": true
       }
+    },
+    {
+      "path": "pages/sample-app/index",
+      "style": {
+        "navigationBarTitleText": "快盒"
+      }
     }
   ],
   "tabBar": {

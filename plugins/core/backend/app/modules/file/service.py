@@ -135,6 +135,22 @@ def file_item(row: FileAttachment) -> dict[str, Any]:
 
 
 class FileService:
+    async def pending_items(self, session, file_ids, *, user, scene_code, include_integrity=False):
+        """业务确认前核对本人待绑定文件；不绑定、不提交，不返回存储键。"""
+        if len(file_ids) > scene(scene_code).max_count or len(set(file_ids)) != len(file_ids):
+            raise AppException("附件数量超限或重复", status_code=422)
+        items = []
+        for file_id in sorted(file_ids, key=str):
+            row = await repository.upload_for_ingest(session, file_id)
+            if (row is None or row.status_code != STATUS_PENDING or row.uploader_user_id != user.user_id
+                    or row.scene_code != scene_code or row.expires_at < local_now()):
+                raise AppException("附件未完成上传、已被使用、已过期或不属于本人", status_code=422)
+            item = file_item(row)
+            if include_integrity:
+                item["content_md5"] = row.content_md5
+            items.append(item)
+        return items
+
     async def read_content(self, session, file_id, *, user):
         """供业务适配器读取已授权原件；复用绑定业务访问检查，不暴露存储键。"""
         row = await repository.file_for_read(session, file_id)

@@ -1,0 +1,20 @@
+{
+  "format_version": 1,
+  "web_view_roots": [
+    "sample-app"
+  ],
+  "miniapp_pages": [
+    "pages/sample-app/index"
+  ],
+  "miniapp_service_provider": "miniprogram/services.ts",
+  "web_applications": [
+    {
+      "title": "快盒",
+      "summary": "快盒业务入口",
+      "icon": "ri:apps-2-line",
+      "path": "/sample-app/home",
+      "rootPath": "/sample-app",
+      "tone": "blue"
+    }
+  ]
+}
